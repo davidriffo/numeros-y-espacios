@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a las Derivadas | MathEdu</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">MathEdu</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Volver al Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-container">
+        <h1>Derivadas: Concepto y Aplicación</h1>
+        
+        <section class="theory">
+            <h2>1. Teoría</h2>
+            <p>La derivada representa la tasa de cambio instantánea de una función. Visualmente, es la pendiente de la recta tangente a la curva en un punto específico. Es una herramienta fundamental en el cálculo diferencial para optimizar funciones y modelar sistemas dinámicos.</p>
+        </section>
+
+        <section class="examples">
+            <h2>2. Ejemplo Resuelto Paso a Paso</h2>
+            <div class="example-box">
+                <p><strong>Problema:</strong> Encuentra la derivada de f(x) = 3x^2 + 5x - 2</p>
+                <p><strong>Paso 1:</strong> Aplicamos la regla de la potencia a cada término.</p>
+                <p><strong>Paso 2:</strong> La derivada de 3x^2 es 2 * 3x^(2-1) = 6x.</p>
+                <p><strong>Paso 3:</strong> La derivada de 5x es 5.</p>
+                <p><strong>Paso 4:</strong> La derivada de una constante (-2) es 0.</p>
+                <p><strong>Solución:</strong> f'(x) = 6x + 5</p>
+            </div>
+        </section>
+
+        <section class="practice">
+            <h2>3. Práctica</h2>
+            <p>Resuelve la siguiente derivada y verifica tu respuesta:</p>
+            <p>g(x) = 4x^3 - 2x</p>
+            <button onclick="mostrarRespuesta()" class="btn-small">Ver Respuesta</button>
+            <p id="respuesta" class="hidden-answer"><strong>Solución:</strong> g'(x) = 12x^2 - 2</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MathEdu.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
