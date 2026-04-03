@@ -1,8 +1,8 @@
-/* Variables de color y tipografía */
+/* Variables de color y tipografía actualizadas */
 :root {
-    --primary-color: #2c3e50; /* Azul oscuro profesional */
-    --secondary-color: #3498db; /* Azul brillante amigable */
-    --bg-color: #f8f9fa;
+    --primary-color: #002B54; /* Azul marino profundo y académico */
+    --secondary-color: #FDB913; /* Amarillo dorado vibrante */
+    --bg-color: #F5F7FA; /* Fondo muy claro con un leve toque azulado */
     --text-color: #333333;
     --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
@@ -94,24 +94,27 @@ section {
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     width: 300px;
     text-align: center;
-    border-top: 4px solid var(--secondary-color);
+    border-top: 5px solid var(--secondary-color); /* Línea amarilla en la parte superior */
 }
 
 .btn {
     display: inline-block;
     padding: 0.8rem 1.5rem;
     background-color: var(--secondary-color);
-    color: white;
+    color: var(--primary-color); /* Texto azul sobre fondo amarillo */
+    font-weight: bold;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 1rem;
     border: none;
     cursor: pointer;
     font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s;
 }
 
 .btn:hover {
-    background-color: #2980b9;
+    background-color: #e5a415; /* Amarillo ligeramente más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
 }
 
 /* Enlaces de Recursos */
