@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álgebra Lineal | MathEdu</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">MathEdu</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Volver al Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-container">
+        <h1>Álgebra Lineal: Operaciones con Matrices</h1>
+        
+        <section class="theory">
+            <h2>1. Teoría</h2>
+            <p>Una matriz es un arreglo bidimensional de números. La suma de matrices se realiza sumando los elementos que ocupan la misma posición. Para que la suma esté definida, ambas matrices deben tener exactamente la misma dimensión.</p>
+        </section>
+
+        <section class="examples">
+            <h2>2. Ejemplo Resuelto</h2>
+            <div class="example-box">
+                <p><strong>Problema:</strong> Sumar las matrices A y B.</p>
+                <p>
+                    $$ A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}, \quad B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix} $$
+                </p>
+                <p><strong>Solución:</strong> Sumamos elemento a elemento:</p>
+                <p>
+                    $$ A + B = \begin{pmatrix} 1+5 & 2+6 \\ 3+7 & 4+8 \end{pmatrix} = \begin{pmatrix} 6 & 8 \\ 10 & 12 \end{pmatrix} $$
+                </p>
+            </div>
+        </section>
+
+        <section class="practice">
+            <h2>3. Práctica</h2>
+            <p>Calcula el determinante de la matriz A del ejemplo anterior.</p>
+            <button onclick="mostrarRespuesta()" class="btn-small">Ver Respuesta</button>
+            <p id="respuesta" class="hidden-answer"><strong>Solución:</strong> $$ \det(A) = (1)(4) - (2)(3) = 4 - 6 = -2 $$</p>
+        </section>
+
+        <section class="downloads">
+            <h2>4. Material Descargable</h2>
+            <p>Descarga la pauta completa de la ayudantía:</p>
+            <a href="recursos/pdfs/guia-algebra.pdf" target="_blank" class="btn">📄 Descargar Guía de Álgebra</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MathEdu.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

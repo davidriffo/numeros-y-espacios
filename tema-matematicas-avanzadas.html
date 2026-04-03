@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecuaciones Diferenciales | MathEdu</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">MathEdu</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Volver al Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-container">
+        <h1>Ecuaciones Diferenciales Ordinarias (EDO)</h1>
+        
+        <section class="theory">
+            <h2>1. Teoría: EDO Lineales de Primer Orden</h2>
+            <p>Una ecuación diferencial lineal de primer orden tiene la forma estándar:</p>
+            <p>$$ \frac{dy}{dx} + P(x)y = Q(x) $$</p>
+            <p>Para resolverla, utilizamos el método del factor integrante, denotado como $$ \mu(x) = e^{\int P(x) dx} $$.</p>
+        </section>
+
+        <section class="examples">
+            <h2>2. Ejemplo Resuelto</h2>
+            <div class="example-box">
+                <p><strong>Problema:</strong> Resolver la ecuación $$ \frac{dy}{dx} + 2y = e^{-x} $$</p>
+                <p><strong>Paso 1:</strong> Identificamos $$ P(x) = 2 $$ y $$ Q(x) = e^{-x} $$.</p>
+                <p><strong>Paso 2:</strong> Calculamos el factor integrante: $$ \mu(x) = e^{\int 2 dx} = e^{2x} $$.</p>
+                <p><strong>Paso 3:</strong> Multiplicamos toda la EDO por el factor integrante y procedemos a integrar ambos lados.</p>
+                <p><strong>Solución general:</strong> $$ y(x) = e^{-x} + C e^{-2x} $$</p>
+            </div>
+        </section>
+
+        <section class="practice">
+            <h2>3. Práctica</h2>
+            <p>Encuentra el factor integrante para la ecuación: $$ x\frac{dy}{dx} - 3y = x^4 $$</p>
+            <p><em>Sugerencia: Primero lleva la ecuación a la forma estándar.</em></p>
+            <button onclick="mostrarRespuesta()" class="btn-small">Ver Respuesta</button>
+            <p id="respuesta" class="hidden-answer"><strong>Solución:</strong> $$ \mu(x) = x^{-3} $$</p>
+        </section>
+
+        <section class="downloads">
+            <h2>4. Material Descargable</h2>
+            <p>Descarga la resolución paso a paso:</p>
+            <a href="recursos/pdfs/guia-edos.pdf" target="_blank" class="btn">📄 Descargar Guía de EDOs</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MathEdu.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
