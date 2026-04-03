@@ -1,0 +1,184 @@
+/* Variables de color y tipografía actualizadas */
+:root {
+    --primary-color: #002B54; /* Azul marino profundo y académico */
+    --secondary-color: #FDB913; /* Amarillo dorado vibrante */
+    --bg-color: #F5F7FA; /* Fondo muy claro con un leve toque azulado */
+    --text-color: #333333;
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navegación fija */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.search-container input {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: none;
+}
+
+.search-container button {
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Secciones Generales */
+section {
+    padding: 4rem 5%;
+}
+
+.hero {
+    background-color: white;
+    text-align: center;
+    border-bottom: 2px solid #eaeaea;
+}
+
+.hero h1 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Grid de Cursos */
+.grid-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    width: 300px;
+    text-align: center;
+    border-top: 5px solid var(--secondary-color); /* Línea amarilla en la parte superior */
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color); /* Texto azul sobre fondo amarillo */
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #e5a415; /* Amarillo ligeramente más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+/* Enlaces de Recursos */
+.resource-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+.resource-links a {
+    background: white;
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    border-radius: 5px;
+    border-left: 4px solid var(--secondary-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--font-main);
+}
+
+/* Estilos de la página de Tema */
+.lesson-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.example-box {
+    background-color: #eaf2f8;
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+}
+
+.hidden-answer {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #d4edda;
+    color: #155724;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--primary-color);
+    color: white;
+}
