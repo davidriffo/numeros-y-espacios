@@ -3,16 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Álgebra Lineal | MathEdu</title>
+    <title>Módulo de Álgebra | MateRiffo</title>
     <link rel="stylesheet" href="css/style.css">
     
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        /* Estilos para el diseño de dos columnas (Contenido a la izq, Índice a la der) */
+        .module-layout {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .module-content {
+            flex: 3; /* Toma el 75% del ancho disponible */
+        }
+
+        .module-sidebar {
+            flex: 1; /* Toma el 25% del ancho disponible */
+            position: sticky;
+            top: 90px; /* Se queda fijo al hacer scroll, justo debajo de la barra de navegación */
+            background-color: #F5F7FA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .module-sidebar ul {
+            list-style-type: none;
+            padding-top: 1rem;
+        }
+
+        .module-sidebar li {
+            margin-bottom: 0.8rem;
+        }
+
+        .module-sidebar a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            display: block;
+            transition: color 0.2s;
+        }
+
+        .module-sidebar a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Sección de Historia/Motivación */
+        .history-section {
+            background-color: #eaf2f8;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            border: 1px solid #cce0f0;
+        }
+
+        /* Separador de subsecciones */
+        .sub-topic {
+            border-top: 3px dashed #ccc;
+            margin-top: 4rem;
+            padding-top: 2rem;
+        }
+
+        /* Responsividad: En celulares, el índice pasa arriba */
+        @media (max-width: 768px) {
+            .module-layout {
+                flex-direction: column-reverse;
+            }
+            .module-sidebar {
+                position: static;
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header class="navbar">
-        <div class="logo">MathEdu</div>
+        <div class="logo">MateRiffo</div>
         <nav>
             <ul>
                 <li><a href="index.html">Volver al Inicio</a></li>
@@ -21,43 +94,166 @@
     </header>
 
     <main class="lesson-container">
-        <h1>Álgebra Lineal: Operaciones con Matrices</h1>
+        <h1>Módulo de Álgebra</h1>
         
-        <section class="theory">
-            <h2>1. Teoría</h2>
-            <p>Una matriz es un arreglo bidimensional de números. La suma de matrices se realiza sumando los elementos que ocupan la misma posición. Para que la suma esté definida, ambas matrices deben tener exactamente la misma dimensión.</p>
-        </section>
+        <div class="module-layout">
+            
+            <div class="module-content">
+                
+                <div class="history-section">
+                    <h2>💡 Un poco de historia...</h2>
+                    <p>La palabra <strong>"Álgebra"</strong> proviene del tratado matemático <em>"Al-Jabr wa-l-Muqabala"</em>, escrito por el matemático persa Al-Juarismi en el siglo IX. Literalmente, "Al-Jabr" significa "la reintegración" o "restauración", refiriéndose al proceso de pasar términos negativos de un lado de la ecuación al otro.</p>
+                    <p>Hoy en día, el álgebra es el lenguaje universal que nos permite generalizar la aritmética y modelar desde la trayectoria de un satélite espacial hasta los algoritmos de inteligencia artificial. ¡Comencemos el viaje!</p>
+                </div>
 
-        <section class="examples">
-            <h2>2. Ejemplo Resuelto</h2>
-            <div class="example-box">
-                <p><strong>Problema:</strong> Sumar las matrices A y B.</p>
-                <p>
-                    $$ A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}, \quad B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix} $$
-                </p>
-                <p><strong>Solución:</strong> Sumamos elemento a elemento:</p>
-                <p>
-                    $$ A + B = \begin{pmatrix} 1+5 & 2+6 \\ 3+7 & 4+8 \end{pmatrix} = \begin{pmatrix} 6 & 8 \\ 10 & 12 \end{pmatrix} $$
-                </p>
-            </div>
-        </section>
+                <div id="logica">
+                    <h2>1. Lógica y Conjuntos</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>La lógica matemática formaliza el razonamiento humano. Una proposición es un enunciado que puede ser verdadero (V) o falso (F), pero no ambos. Los conectivos lógicos (conjunción, disyunción, implicación) nos permiten construir proposiciones compuestas y evaluarlas mediante tablas de verdad.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Construya la tabla de verdad para la implicación $$ p \implies q $$</p>
+                            <p><strong>Solución:</strong> La implicación solo es falsa cuando la premisa ($$p$$) es verdadera y la conclusión ($$q$$) es falsa. En cualquier otro caso, es verdadera.</p>
+                            <ul>
+                                <li>V $$\implies$$ V es <strong>V</strong></li>
+                                <li>V $$\implies$$ F es <strong>F</strong></li>
+                                <li>F $$\implies$$ V es <strong>V</strong></li>
+                                <li>F $$\implies$$ F es <strong>V</strong></li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>Determina el valor de verdad de: "Si 2+2=5, entonces el hielo es caliente".</p>
+                        <button onclick="document.getElementById('resp-alg-1').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-alg-1" class="hidden-answer"><strong>Solución:</strong> Es <strong>Verdadero</strong>. Como la premisa (2+2=5) es falsa, la implicación completa es lógicamente verdadera (vacuamente verdadera).</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/guia_logica.pdf" target="_blank" class="btn">📄 Guía de Lógica Proposicional</a>
+                    </section>
+                </div>
 
-        <section class="practice">
-            <h2>3. Práctica</h2>
-            <p>Calcula el determinante de la matriz A del ejemplo anterior.</p>
-            <button onclick="mostrarRespuesta()" class="btn-small">Ver Respuesta</button>
-            <p id="respuesta" class="hidden-answer"><strong>Solución:</strong> $$ \det(A) = (1)(4) - (2)(3) = 4 - 6 = -2 $$</p>
-        </section>
+                <div id="naturales" class="sub-topic">
+                    <h2>2. Números Naturales e Inducción</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>El principio de Inducción Matemática es una técnica de demostración utilizada para probar que una propiedad se cumple para todos los números naturales. Consta de dos pasos: el caso base (generalmente $$n=1$$) y el paso inductivo (asumir cierto para $$n=k$$ y probar para $$n=k+1$$).</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Demostrar que $$ \sum_{i=1}^n i = \frac{n(n+1)}{2} $$</p>
+                            <p><strong>Paso 1 (Base):</strong> Para $$n=1$$, $$1 = \frac{1(2)}{2}$$. Se cumple.</p>
+                            <p><strong>Paso 2 (Hipótesis):</strong> Asumimos válido para $$n=k$$.</p>
+                            <p><strong>Paso 3 (Tesis):</strong> Para $$n=k+1$$, la suma es la hipótesis más el término $$(k+1)$$. Al sumar algebraicamente obtenemos $$\frac{(k+1)(k+2)}{2}$$, lo que completa la demostración.</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>¿Cuál es la suma de los primeros 100 números naturales?</p>
+                        <button onclick="document.getElementById('resp-alg-2').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-alg-2" class="hidden-answer"><strong>Solución:</strong> Aplicando la fórmula: $$\frac{100(101)}{2} = 5050$$</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/induccion_ejercicios.pdf" target="_blank" class="btn">📄 Ejercicios de Inducción</a>
+                    </section>
+                </div>
 
-        <section class="downloads">
-            <h2>4. Material Descargable</h2>
-            <p>Descarga la pauta completa de la ayudantía:</p>
-            <a href="recursos/pdfs/guia-algebra.pdf" target="_blank" class="btn">📄 Descargar Guía de Álgebra</a>
-        </section>
-    </main>
+                <div id="trigonometria" class="sub-topic">
+                    <h2>3. Trigonometría Analítica</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>En el álgebra, la trigonometría se enfoca en la resolución de ecuaciones trigonométricas y el uso de identidades (como la suma de ángulos o ángulos dobles) para simplificar expresiones complejas.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Resuelve la ecuación $$ \sin(x) = \frac{1}{2} $$ para $$ 0 \leq x \leq 2\pi $$</p>
+                            <p><strong>Solución:</strong> Sabemos que el seno es positivo en el primer y segundo cuadrante. El ángulo de referencia es $$ \frac{\pi}{6} $$. Por lo tanto, las soluciones son $$ x = \frac{\pi}{6} $$ y $$ x = \pi - \frac{\pi}{6} = \frac{5\pi}{6} $$.</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>Utiliza la identidad de ángulo doble para expandir $$ \cos(2x) $$.</p>
+                        <button onclick="document.getElementById('resp-alg-3').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-alg-3" class="hidden-answer"><strong>Solución:</strong> Existen tres formas comunes: $$ \cos^2(x) - \sin^2(x) $$, $$ 2\cos^2(x) - 1 $$, o $$ 1 - 2\sin^2(x) $$.</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/ecuaciones_trig.pdf" target="_blank" class="btn">📄 Guía Ecuaciones Trigonométricas</a>
+                    </section>
+                </div>
+
+                <div id="vectores" class="sub-topic">
+                    <h2>4. Geometría Vectorial</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>Un vector en el plano o en el espacio está definido por su magnitud y dirección. El <strong>producto punto</strong> (escalar) nos permite determinar el ángulo entre dos vectores y verificar si son perpendiculares (producto igual a 0).</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Calcule el producto punto entre $$ \vec{u} = (2, -3) $$ y $$ \vec{v} = (1, 4) $$</p>
+                            <p><strong>Solución:</strong> $$ \vec{u} \cdot \vec{v} = (2)(1) + (-3)(4) = 2 - 12 = -10 $$</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>Encuentre la magnitud (módulo) del vector $$ \vec{w} = (3, 4) $$.</p>
+                        <button onclick="document.getElementById('resp-alg-4').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-alg-4" class="hidden-answer"><strong>Solución:</strong> $$ \|\vec{w}\| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5 $$</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/guia_vectores.pdf" target="_blank" class="btn">📄 Ejercicios de Vectores</a>
+                    </section>
+                </div>
+
+                <div id="polinomios" class="sub-topic">
+                    <h2>5. Polinomios</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>El estudio de raíces polinomiales se apoya en el Teorema del Resto y la División Sintética. El Teorema Fundamental del Álgebra establece que todo polinomio de grado $$n$$ tiene exactamente $$n$$ raíces en el campo de los números complejos.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Encuentre el resto de dividir $$ P(x) = x^3 - 2x^2 + 5x - 1 $$ por $$ (x - 2) $$.</p>
+                            <p><strong>Solución:</strong> Por el Teorema del Resto, basta con evaluar $$ P(2) $$. <br> $$ P(2) = (2)^3 - 2(2)^2 + 5(2) - 1 = 8 - 8 + 10 - 1 = 9 $$. El resto es 9.</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>¿Es $$ x = 1 $$ una raíz del polinomio $$ Q(x) = 2x^4 - 3x^2 + 1 $$?</p>
+                        <button onclick="document.getElementById('resp-alg-5').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-alg-5" class="hidden-answer"><strong>Solución:</strong> Sí. Al evaluar $$ Q(1) = 2(1) - 3(1) + 1 = 0 $$. Como el resultado es 0, es una raíz.</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/guia_polinomios.pdf" target="_blank" class="btn">📄 Guía de Polinomios y Raíces</a>
+                    </section>
+                </div>
+
+            </div> <aside class="module-sidebar">
+                <h3>Contenidos del Módulo:</h3>
+                <ul>
+                    <li><a href="#logica">1. Lógica y Conjuntos</a></li>
+                    <li><a href="#naturales">2. Números Naturales</a></li>
+                    <li><a href="#trigonometria">3. Trigonometría</a></li>
+                    <li><a href="#vectores">4. Vectores</a></li>
+                    <li><a href="#polinomios">5. Polinomios</a></li>
+                </ul>
+            </aside>
+
+        </div> </main>
 
     <footer>
-        <p>&copy; 2026 MathEdu.</p>
+        <p>&copy; 2026 MateRiffo.</p>
     </footer>
 
     <script src="js/main.js"></script>
