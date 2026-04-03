@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introducción a las Derivadas | MathEdu</title>
+    <title>Funciones reales | MateRiffo</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <header class="navbar">
-        <div class="logo">MathEdu</div>
+        <div class="logo">MateRiffo</div>
         <nav>
             <ul>
                 <li><a href="index.html">Volver al Inicio</a></li>
@@ -18,31 +18,30 @@
     </header>
 
     <main class="lesson-container">
-        <h1>Derivadas: Concepto y Aplicación</h1>
+        <h1>Funciones: Dominio y recorrido</h1>
         
         <section class="theory">
             <h2>1. Teoría</h2>
-            <p>La derivada representa la tasa de cambio instantánea de una función. Visualmente, es la pendiente de la recta tangente a la curva en un punto específico. Es una herramienta fundamental en el cálculo diferencial para optimizar funciones y modelar sistemas dinámicos.</p>
+            <p>Para determinar el dominio de una función, debemos determinar el máximo conjunto donde esta se encuentra definida.</p>
         </section>
 
         <section class="examples">
             <h2>2. Ejemplo Resuelto Paso a Paso</h2>
             <div class="example-box">
-                <p><strong>Problema:</strong> Encuentra la derivada de f(x) = 3x^2 + 5x - 2</p>
-                <p><strong>Paso 1:</strong> Aplicamos la regla de la potencia a cada término.</p>
-                <p><strong>Paso 2:</strong> La derivada de 3x^2 es 2 * 3x^(2-1) = 6x.</p>
-                <p><strong>Paso 3:</strong> La derivada de 5x es 5.</p>
-                <p><strong>Paso 4:</strong> La derivada de una constante (-2) es 0.</p>
-                <p><strong>Solución:</strong> f'(x) = 6x + 5</p>
+                <p><strong>Problema:</strong> Encuentre el dominio de la función de f(x) = log(-x^2+5x-4)</p>
+                <p><strong>Paso 1:</strong> Como es una función logaritmo su argumento debe ser positivo.</p>
+                <p><strong>Paso 2:</strong> Debemos resolver la inecuación -x^2+5x-4>0.</p>
+                <p><strong>Paso 3:</strong> La solución de esta inecuación nos entrega el dominio de la función.</p>
+                <p><strong>Solución:</strong> Dom(f) = ]1,4[</p>
             </div>
         </section>
 
         <section class="practice">
             <h2>3. Práctica</h2>
-            <p>Resuelve la siguiente derivada y verifica tu respuesta:</p>
-            <p>g(x) = 4x^3 - 2x</p>
+            <p>Determine el dominio de la función:</p>
+            <p>g(x) = \sqrt{\dfrac{x-1}{4-x}}</p>
             <button onclick="mostrarRespuesta()" class="btn-small">Ver Respuesta</button>
-            <p id="respuesta" class="hidden-answer"><strong>Solución:</strong> g'(x) = 12x^2 - 2</p>
+            <p id="respuesta" class="hidden-answer"><strong>Solución:</strong> Dom(g(x))= </p>
         </section>
         <section class="downloads">
             <h2>4. Material Descargable</h2>
@@ -50,6 +49,7 @@
             <a href="recursos/pdf/ejercicios 1 calculo diferencial.pdf" target="_blank" class="btn">📄 Descargar Guía de Ejercicios 1</a>
             <a href="recursos/pdf/ejercicios-2-calculo.pdf" target="_blank" class="btn">📄 Descargar Guía de Ejercicios 2</a>
             <a href="recursos/pdf/solucion-ejercicios-2-calculo.pdf" target="_blank" class="btn">📄 Descargar Soluciones Guía de Ejercicios 2</a>
+            <a href="recursos/pdf/funciones-inversas.pdf" target="_blank" class="btn">📄 Descargar Apuntes funciones inversas</a>
         </section>
 
     </main>
