@@ -3,16 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecuaciones Diferenciales | MathEdu</title>
+    <title>Matemáticas Avanzadas | MateRiffo</title>
     <link rel="stylesheet" href="css/style.css">
     
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        /* Diseño de dos columnas (Contenido a la izq, Índice a la der) */
+        .module-layout {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .module-content {
+            flex: 3;
+        }
+
+        .module-sidebar {
+            flex: 1;
+            position: sticky;
+            top: 90px;
+            background-color: #F5F7FA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .module-sidebar ul {
+            list-style-type: none;
+            padding-top: 1rem;
+        }
+
+        .module-sidebar li {
+            margin-bottom: 0.8rem;
+        }
+
+        .module-sidebar a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            display: block;
+        }
+
+        .module-sidebar a:hover {
+            color: var(--secondary-color);
+        }
+
+        .history-section {
+            background-color: #eaf2f8;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            border: 1px solid #cce0f0;
+        }
+
+        .sub-topic {
+            border-top: 3px dashed #ccc;
+            margin-top: 4rem;
+            padding-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .module-layout {
+                flex-direction: column-reverse;
+            }
+            .module-sidebar {
+                position: static;
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header class="navbar">
-        <div class="logo">MathEdu</div>
+        <div class="logo">MateRiffo</div>
         <nav>
             <ul>
                 <li><a href="index.html">Volver al Inicio</a></li>
@@ -21,43 +90,185 @@
     </header>
 
     <main class="lesson-container">
-        <h1>Ecuaciones Diferenciales Ordinarias (EDO)</h1>
+        <h1>Módulo de Matemáticas Avanzadas</h1>
         
-        <section class="theory">
-            <h2>1. Teoría: EDO Lineales de Primer Orden</h2>
-            <p>Una ecuación diferencial lineal de primer orden tiene la forma estándar:</p>
-            <p>$$ \frac{dy}{dx} + P(x)y = Q(x) $$</p>
-            <p>Para resolverla, utilizamos el método del factor integrante, denotado como $$ \mu(x) = e^{\int P(x) dx} $$.</p>
-        </section>
+        <div class="module-layout">
+            
+            <div class="module-content">
+                
+                <div class="history-section">
+                    <h2>🚀 El Poder del Razonamiento Abstracto</h2>
+                    <p>Las matemáticas avanzadas no son solo cálculos complejos, sino el arte de la formalización. Desde la rigurosidad de la <strong>lógica de predicados</strong> hasta la resolución de <strong>sistemas de ecuaciones</strong> multidimensionales, este módulo está diseñado para fortalecer el pensamiento crítico necesario en ingeniería y ciencias exactas.</p>
+                    <p>Aquí exploraremos cómo las estructuras abstractas nos permiten predecir comportamientos complejos en el mundo real.</p>
+                </div>
 
-        <section class="examples">
-            <h2>2. Ejemplo Resuelto</h2>
-            <div class="example-box">
-                <p><strong>Problema:</strong> Resolver la ecuación $$ \frac{dy}{dx} + 2y = e^{-x} $$</p>
-                <p><strong>Paso 1:</strong> Identificamos $$ P(x) = 2 $$ y $$ Q(x) = e^{-x} $$.</p>
-                <p><strong>Paso 2:</strong> Calculamos el factor integrante: $$ \mu(x) = e^{\int 2 dx} = e^{2x} $$.</p>
-                <p><strong>Paso 3:</strong> Multiplicamos toda la EDO por el factor integrante y procedemos a integrar ambos lados.</p>
-                <p><strong>Solución general:</strong> $$ y(x) = e^{-x} + C e^{-2x} $$</p>
-            </div>
-        </section>
+                <div id="logica">
+                    <h2>1. Lógica de Predicados y Cuantificadores</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>A diferencia de la lógica proposicional, la lógica de predicados introduce los cuantificadores universal ($$ \forall $$) y existencial ($$ \exists $$). Esto nos permite expresar afirmaciones sobre conjuntos de elementos, siendo la base fundamental de las demostraciones matemáticas modernas.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Negar la proposición: $$ \forall x \in \mathbb{R}, \exists y \in \mathbb{R} : x + y = 0 $$</p>
+                            <p><strong>Solución:</strong> Aplicando las reglas de negación de cuantificadores ($$ \neg \forall \to \exists $$ y $$ \neg \exists \to \forall $$):</p>
+                            <p>$$ \neg (\forall x \in \mathbb{R}, \exists y \in \mathbb{R} : x + y = 0) \iff \exists x \in \mathbb{R}, \forall y \in \mathbb{R} : x + y \neq 0 $$</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>Exprese formalmente: "Para todo número real positivo, existe un número real cuya raíz cuadrada es igual a él".</p>
+                        <button onclick="document.getElementById('resp-adv-1').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-adv-1" class="hidden-answer"><strong>Solución:</strong> $$ \forall x \in \mathbb{R}^+, \exists y \in \mathbb{R} : \sqrt{y} = x $$</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/logica_avanzada.pdf" target="_blank" class="btn">📄 Apuntes de Lógica</a>
+                    </section>
+                </div>
 
-        <section class="practice">
-            <h2>3. Práctica</h2>
-            <p>Encuentra el factor integrante para la ecuación: $$ x\frac{dy}{dx} - 3y = x^4 $$</p>
-            <p><em>Sugerencia: Primero lleva la ecuación a la forma estándar.</em></p>
-            <button onclick="mostrarRespuesta()" class="btn-small">Ver Respuesta</button>
-            <p id="respuesta" class="hidden-answer"><strong>Solución:</strong> $$ \mu(x) = x^{-3} $$</p>
-        </section>
+                <div id="naturales" class="sub-topic">
+                    <h2>2. Números Naturales y Axiomas de Peano</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>Los números naturales se construyen formalmente a partir de los axiomas de Peano. El concepto de <strong>Buen Orden</strong> asegura que cualquier subconjunto no vacío de $$ \mathbb{N} $$ tiene un elemento mínimo, propiedad crucial para la recursión y algoritmos de búsqueda.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Demostrar por inducción que $$ 2^n > n $$ para todo $$ n \in \mathbb{N} $$.</p>
+                            <p><strong>Solución:</strong> Base $$ n=1: 2^1 > 1 $$ (cierto). Hipótesis: $$ 2^k > k $$. Para $$ k+1 $$: $$ 2^{k+1} = 2 \cdot 2^k > 2k = k + k \geq k + 1 $$. Se cumple.</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>Pruebe que la suma de los primeros $$ n $$ números impares es $$ n^2 $$.</p>
+                        <button onclick="document.getElementById('resp-adv-2').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-adv-2" class="hidden-answer"><strong>Solución:</strong> $$ 1 + 3 + 5 + \dots + (2n-1) = n^2 $$. Se demuestra fácilmente por inducción matemática.</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/teoria_numeros.pdf" target="_blank" class="btn">📄 Guía de Números Naturales</a>
+                    </section>
+                </div>
 
-        <section class="downloads">
-            <h2>4. Material Descargable</h2>
-            <p>Descarga la resolución paso a paso:</p>
-            <a href="recursos/pdfs/guia-edos.pdf" target="_blank" class="btn">📄 Descargar Guía de EDOs</a>
-        </section>
-    </main>
+                <div id="inecuaciones" class="sub-topic">
+                    <h2>3. Inecuaciones de Grado Superior y Racionales</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>Para resolver inecuaciones del tipo $$ \frac{P(x)}{Q(x)} \geq 0 $$, utilizamos el método de puntos críticos y tablas de signos. Es vital considerar las restricciones del dominio (donde el denominador se anula).</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Resolver $$ \frac{x-3}{x+2} \leq 0 $$</p>
+                            <p><strong>Solución:</strong> Puntos críticos en $$ x=3 $$ y $$ x=-2 $$. Analizando los intervalos: $$ ]-\infty, -2[ $$ (pos), $$ ]-2, 3] $$ (neg), $$ [3, \infty[ $$ (pos). <strong>Resultado:</strong> $$ x \in ]-2, 3] $$.</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>Resuelva la inecuación con valor absoluto: $$ |2x - 5| < 3 $$</p>
+                        <button onclick="document.getElementById('resp-adv-3').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-adv-3" class="hidden-answer"><strong>Solución:</strong> $$ -3 < 2x - 5 < 3 \implies 2 < 2x < 8 \implies 1 < x < 4 $$. Intervalo: $$ ]1, 4[ $$.</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/inecuaciones_avanzadas.pdf" target="_blank" class="btn">📄 Guía de Inecuaciones</a>
+                    </section>
+                </div>
+
+                <div id="funciones" class="sub-topic">
+                    <h2>4. Funciones Reales: Composición y Álgebra de Funciones</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>El análisis de funciones incluye la composición $$ (f \circ g)(x) = f(g(x)) $$. Comprender el dominio de la composición es fundamental: son los valores de $$ x $$ en el dominio de $$ g $$ tales que $$ g(x) $$ está en el dominio de $$ f $$.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Sean $$ f(x) = x^2 $$ y $$ g(x) = \sqrt{x-1} $$. Halle $$ (f \circ g)(x) $$ y su dominio.</p>
+                            <p><strong>Solución:</strong> $$ f(g(x)) = (\sqrt{x-1})^2 = x-1 $$. El dominio de $$ g $$ es $$ x \geq 1 $$. Por lo tanto, $$ \text{Dom}(f \circ g) = [1, \infty[ $$.</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>Determine si la función $$ f(x) = x^3 + x $$ es par, impar o ninguna.</p>
+                        <button onclick="document.getElementById('resp-adv-4').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-adv-4" class="hidden-answer"><strong>Solución:</strong> Es <strong>impar</strong>, ya que $$ f(-x) = (-x)^3 + (-x) = -(x^3 + x) = -f(x) $$.</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/algebra_funciones.pdf" target="_blank" class="btn">📄 Apuntes de Funciones</a>
+                    </section>
+                </div>
+
+                <div id="aplicaciones" class="sub-topic">
+                    <h2>5. Aplicaciones del Modelamiento Matemático</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>El modelamiento utiliza funciones para describir fenómenos reales, como el crecimiento poblacional (exponencial) o la desintegración radiactiva. La clave es identificar las variables dependientes e independientes del sistema.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Una población crece según $$ P(t) = 1000 \cdot e^{0.05t} $$. ¿Población inicial?</p>
+                            <p><strong>Solución:</strong> Evaluamos en $$ t=0 $$. $$ P(0) = 1000 \cdot e^0 = 1000 $$ individuos.</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>Si el costo total es $$ C(x) = 20x + 500 $$, ¿cuál es el costo fijo?</p>
+                        <button onclick="document.getElementById('resp-adv-5').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-adv-5" class="hidden-answer"><strong>Solución:</strong> El costo fijo es el valor cuando $$ x=0 $$, es decir, 500.</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/modelamiento.pdf" target="_blank" class="btn">📄 Casos de Aplicación</a>
+                    </section>
+                </div>
+
+                <div id="sistemas" class="sub-topic">
+                    <h2>6. Sistemas de Ecuaciones Lineales y Matrices</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>Para sistemas de $$ n \times n $$, podemos utilizar métodos de sustitución, eliminación o la <strong>Regla de Cramer</strong> mediante determinantes. La compatibilidad del sistema depende del rango de la matriz de coeficientes.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Resolver $$ \begin{cases} x + y = 5 \\ x - y = 1 \end{cases} $$</p>
+                            <p><strong>Solución:</strong> Sumando ambas ecuaciones: $$ 2x = 6 \implies x = 3 $$. Sustituyendo en la primera: $$ 3 + y = 5 \implies y = 2 $$. Solución: $$ (3, 2) $$.</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>¿Cuándo un sistema de ecuaciones se considera "Incompatible"?</p>
+                        <button onclick="document.getElementById('resp-adv-6').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-adv-6" class="hidden-answer"><strong>Solución:</strong> Cuando no existe ninguna combinación de valores que satisfaga todas las ecuaciones simultáneamente (no tiene solución).</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/sistemas_lineales.pdf" target="_blank" class="btn">📄 Guía de Sistemas de Ecuaciones</a>
+                    </section>
+                </div>
+
+            </div> <aside class="module-sidebar">
+                <h3>Navegación:</h3>
+                <ul>
+                    <li><a href="#logica">1. Lógica</a></li>
+                    <li><a href="#naturales">2. Números Naturales</a></li>
+                    <li><a href="#inecuaciones">3. Inecuaciones</a></li>
+                    <li><a href="#funciones">4. Funciones Reales</a></li>
+                    <li><a href="#aplicaciones">5. Aplicaciones</a></li>
+                    <li><a href="#sistemas">6. Sistemas de Ecuaciones</a></li>
+                </ul>
+            </aside>
+
+        </div> </main>
 
     <footer>
-        <p>&copy; 2026 MathEdu.</p>
+        <p>&copy; 2026 MateRiffo.</p>
     </footer>
 
     <script src="js/main.js"></script>
