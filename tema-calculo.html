@@ -3,11 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funciones reales | MateRiffo</title>
+    <title>Módulo de Cálculo | MateRiffo</title>
     <link rel="stylesheet" href="css/style.css">
     
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        /* Estilos específicos para el índice interno */
+        .module-index {
+            background-color: #F5F7FA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            border-left: 5px solid var(--secondary-color);
+        }
+        .module-index ul {
+            list-style-type: none;
+            padding-top: 1rem;
+        }
+        .module-index li {
+            margin-bottom: 0.5rem;
+        }
+        .module-index a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        .module-index a:hover {
+            color: var(--secondary-color);
+        }
+        /* Separador de subsecciones */
+        .sub-topic {
+            border-top: 3px dashed #ccc;
+            margin-top: 4rem;
+            padding-top: 2rem;
+        }
+    </style>
 </head>
 <body>
 
@@ -21,40 +53,169 @@
     </header>
 
     <main class="lesson-container">
-        <h1>Funciones: Dominio y recorrido</h1>
+        <h1>Módulo de Cálculo y Precálculo</h1>
         
-        <section class="theory">
-            <h2>1. Teoría</h2>
-            <p>Para determinar el dominio de una función, debemos determinar el máximo conjunto donde esta se encuentra definida.</p>
-        </section>
+        <div class="module-index">
+            <h3>Contenidos del Módulo:</h3>
+            <ul>
+                <li><a href="#dominio">1. Dominio y Recorrido de Funciones</a></li>
+                <li><a href="#inversas">2. Funciones Inversas</a></li>
+                <li><a href="#trigonometricas">3. Funciones Trigonométricas</a></li>
+                <li><a href="#conicas">4. Cónicas</a></li>
+                <li><a href="#definicion-derivada">5. Definición de Derivada</a></li>
+                <li><a href="#aplicaciones-derivada">6. Aplicaciones de las Derivadas</a></li>
+            </ul>
+        </div>
 
-        <section class="examples">
-            <h2>2. Ejemplo Resuelto Paso a Paso</h2>
-            <div class="example-box">
-                <p><strong>Problema:</strong> Encuentre el dominio de la función $$f(x) = \log(-x^2+5x-4)$$</p>
-                <p><strong>Paso 1:</strong> Como es una función logaritmo su argumento debe ser positivo.</p>
-                <p><strong>Paso 2:</strong> Debemos resolver la inecuación $$-x^2+5x-4 > 0$$</p>
-                <p><strong>Paso 3:</strong> La solución de esta inecuación nos entrega el dominio de la función.</p>
-                <p><strong>Solución:</strong> $$\text{Dom}(f) = ]1,4[$$</p>
-            </div>
-        </section>
+        <div id="dominio">
+            <h2>1. Dominio y Recorrido de Funciones</h2>
+            <section class="theory">
+                <h3>Teoría</h3>
+                <p>Para determinar el dominio de una función, debemos determinar el máximo conjunto de números reales donde la regla de correspondencia se encuentra bien definida (evitando divisiones por cero, raíces pares de números negativos y logaritmos de números no positivos).</p>
+            </section>
+            <section class="examples">
+                <h3>Ejemplo Resuelto</h3>
+                <div class="example-box">
+                    <p><strong>Problema:</strong> Encuentre el dominio de $$f(x) = \log(-x^2+5x-4)$$</p>
+                    <p><strong>Solución:</strong> Como es una función logaritmo, su argumento debe ser estrictamente positivo. Resolvemos $$-x^2+5x-4 > 0$$, lo que nos da como resultado $$\text{Dom}(f) = ]1,4[$$</p>
+                </div>
+            </section>
+            <section class="practice">
+                <h3>Práctica</h3>
+                <p>Determine el dominio de $$ g(x) = \sqrt{\dfrac{x-1}{4-x}} $$</p>
+                <button onclick="document.getElementById('resp-1').style.display='block'" class="btn-small">Ver Respuesta</button>
+                <p id="resp-1" class="hidden-answer"><strong>Solución:</strong> $$\text{Dom}(g) = [1,4[$$</p>
+            </section>
+            <section class="downloads">
+                <h3>Material Descargable</h3>
+                <a href="recursos/pdfs/guia_dominio.pdf" target="_blank" class="btn">📄 Guía de Dominio y Recorrido</a>
+            </section>
+        </div>
 
-        <section class="practice">
-            <h2>3. Práctica</h2>
-            <p>Determine el dominio de la función:</p>
-            <p>$$ g(x) =  \sqrt{\dfrac{x-1}{4-x}} $$</p>
-            <button onclick="mostrarRespuesta()" class="btn-small">Ver Respuesta</button>
-            <p id="respuesta" class="hidden-answer"><strong>Solución:</strong> $$\text{Dom}(g) = [1,4[$$ </p>
-        </section>
+        <div id="inversas" class="sub-topic">
+            <h2>2. Funciones Inversas</h2>
+            <section class="theory">
+                <h3>Teoría</h3>
+                <p>Una función $$f$$ tiene inversa $$f^{-1}$$ si y solo si es biyectiva (inyectiva y sobreyectiva). La propiedad fundamental es que $$f(f^{-1}(x)) = x$$ y el gráfico de la inversa es una reflexión respecto a la recta $$y = x$$.</p>
+            </section>
+            <section class="examples">
+                <h3>Ejemplo Resuelto</h3>
+                <div class="example-box">
+                    <p><strong>Problema:</strong> Hallar la inversa de $$f(x) = \frac{2x+1}{x-3}$$</p>
+                    <p><strong>Solución:</strong> Igualamos $$y = \frac{2x+1}{x-3}$$, multiplicamos cruzado $$y(x-3) = 2x+1$$ y despejamos $$x$$. Obtenemos $$x = \frac{3y+1}{y-2}$$. Por lo tanto, $$f^{-1}(x) = \frac{3x+1}{x-2}$$.</p>
+                </div>
+            </section>
+            <section class="practice">
+                <h3>Práctica</h3>
+                <p>Encuentra la función inversa de $$h(x) = \sqrt[3]{x-5} + 2$$</p>
+                <button onclick="document.getElementById('resp-2').style.display='block'" class="btn-small">Ver Respuesta</button>
+                <p id="resp-2" class="hidden-answer"><strong>Solución:</strong> $$h^{-1}(x) = (x-2)^3 + 5$$</p>
+            </section>
+            <section class="downloads">
+                <h3>Material Descargable</h3>
+                <a href="recursos/pdfs/funciones-inversas.pdf" target="_blank" class="btn">📄 Apuntes Funciones Inversas</a>
+            </section>
+        </div>
 
-        <section class="downloads">
-            <h2>4. Material Descargable</h2>
-            <p>Descarga la guía completa con más ejercicios propuestos:</p>
-            <a href="recursos/pdf/ejercicios 1 calculo diferencial.pdf" target="_blank" class="btn">📄 Descargar Guía de Ejercicios 1</a>
-            <a href="recursos/pdf/ejercicios-2-calculo.pdf" target="_blank" class="btn">📄 Descargar Guía de Ejercicios 2</a>
-            <a href="recursos/pdf/solucion-ejercicios-2-calculo.pdf" target="_blank" class="btn">📄 Descargar Soluciones Guía de Ejercicios 2</a>
-            <a href="recursos/pdf/funciones-inversas.pdf" target="_blank" class="btn">📄 Descargar Apuntes funciones inversas</a>
-        </section>
+        <div id="trigonometricas" class="sub-topic">
+            <h2>3. Funciones Trigonométricas</h2>
+            <section class="theory">
+                <h3>Teoría</h3>
+                <p>Las funciones trigonométricas (seno, coseno, tangente, etc.) modelan fenómenos periódicos. Es vital conocer sus amplitudes, periodos y desfases, así como las identidades fundamentales para simplificar expresiones algebraicas.</p>
+            </section>
+            <section class="examples">
+                <h3>Ejemplo Resuelto</h3>
+                <div class="example-box">
+                    <p><strong>Problema:</strong> Determine el periodo de la función $$f(x) = 3\sin(4x - \pi)$$</p>
+                    <p><strong>Solución:</strong> El periodo de una función de la forma $$A\sin(Bx+C)$$ está dado por $$T = \frac{2\pi}{|B|}$$. Aquí $$B = 4$$, por lo que $$T = \frac{2\pi}{4} = \frac{\pi}{2}$$.</p>
+                </div>
+            </section>
+            <section class="practice">
+                <h3>Práctica</h3>
+                <p>Simplifica la expresión: $$\sec^2(x) - \tan^2(x)$$</p>
+                <button onclick="document.getElementById('resp-3').style.display='block'" class="btn-small">Ver Respuesta</button>
+                <p id="resp-3" class="hidden-answer"><strong>Solución:</strong> Por identidad pitagórica, el resultado es $$1$$.</p>
+            </section>
+            <section class="downloads">
+                <h3>Material Descargable</h3>
+                <a href="recursos/pdfs/identidades_trig.pdf" target="_blank" class="btn">📄 Formulario Trigonométrico</a>
+            </section>
+        </div>
+
+        <div id="conicas" class="sub-topic">
+            <h2>4. Cónicas</h2>
+            <section class="theory">
+                <h3>Teoría</h3>
+                <p>Las secciones cónicas (circunferencia, parábola, elipse e hipérbola) son curvas obtenidas al intersectar un cono con un plano. Cada una se define como un lugar geométrico con propiedades específicas de distancia a focos y directrices.</p>
+            </section>
+            <section class="examples">
+                <h3>Ejemplo Resuelto</h3>
+                <div class="example-box">
+                    <p><strong>Problema:</strong> Identifique el centro y el radio de la circunferencia $$x^2 + y^2 - 4x + 6y - 3 = 0$$</p>
+                    <p><strong>Solución:</strong> Completando cuadrados: $$(x^2 - 4x + 4) + (y^2 + 6y + 9) = 3 + 4 + 9$$. Obtenemos $$(x-2)^2 + (y+3)^2 = 16$$. El centro es $$(2, -3)$$ y el radio es $$r=4$$.</p>
+                </div>
+            </section>
+            <section class="practice">
+                <h3>Práctica</h3>
+                <p>¿Qué cónica representa la ecuación $$4x^2 - 9y^2 = 36$$?</p>
+                <button onclick="document.getElementById('resp-4').style.display='block'" class="btn-small">Ver Respuesta</button>
+                <p id="resp-4" class="hidden-answer"><strong>Solución:</strong> Es una hipérbola horizontal (dividiendo por 36 se obtiene $$\frac{x^2}{9} - \frac{y^2}{4} = 1$$).</p>
+            </section>
+            <section class="downloads">
+                <h3>Material Descargable</h3>
+                <a href="recursos/pdfs/guia_conicas.pdf" target="_blank" class="btn">📄 Guía de Cónicas</a>
+            </section>
+        </div>
+
+        <div id="definicion-derivada" class="sub-topic">
+            <h2>5. Definición de Derivada</h2>
+            <section class="theory">
+                <h3>Teoría</h3>
+                <p>La derivada de una función en un punto representa la pendiente de la recta tangente a la curva en ese punto. Se define formalmente mediante el límite: $$ f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} $$</p>
+            </section>
+            <section class="examples">
+                <h3>Ejemplo Resuelto</h3>
+                <div class="example-box">
+                    <p><strong>Problema:</strong> Calcule la derivada de $$f(x) = x^2$$ usando la definición.</p>
+                    <p><strong>Solución:</strong> $$ f'(x) = \lim_{h \to 0} \frac{(x+h)^2 - x^2}{h} = \lim_{h \to 0} \frac{x^2 + 2xh + h^2 - x^2}{h} = \lim_{h \to 0} (2x + h) = 2x $$</p>
+                </div>
+            </section>
+            <section class="practice">
+                <h3>Práctica</h3>
+                <p>Aplicando las reglas de derivación, calcula $$y'$$ si $$y = 5x^4 - 3x^2 + 7$$</p>
+                <button onclick="document.getElementById('resp-5').style.display='block'" class="btn-small">Ver Respuesta</button>
+                <p id="resp-5" class="hidden-answer"><strong>Solución:</strong> $$y' = 20x^3 - 6x$$</p>
+            </section>
+            <section class="downloads">
+                <h3>Material Descargable</h3>
+                <a href="recursos/pdfs/ejercicios_derivadas_1.pdf" target="_blank" class="btn">📄 Ejercicios de Derivadas</a>
+            </section>
+        </div>
+
+        <div id="aplicaciones-derivada" class="sub-topic">
+            <h2>6. Aplicaciones de las Derivadas</h2>
+            <section class="theory">
+                <h3>Teoría</h3>
+                <p>Las derivadas se utilizan para resolver problemas de optimización (maximizar o minimizar valores), estudiar la monotonía de una función (crecimiento y decrecimiento) y calcular tasas de cambio relacionadas.</p>
+            </section>
+            <section class="examples">
+                <h3>Ejemplo Resuelto</h3>
+                <div class="example-box">
+                    <p><strong>Problema:</strong> Encuentre los puntos críticos de $$f(x) = x^3 - 3x + 2$$</p>
+                    <p><strong>Solución:</strong> Derivamos la función $$f'(x) = 3x^2 - 3$$. Para hallar los puntos críticos igualamos a cero: $$3x^2 - 3 = 0$$. Resolviendo, obtenemos $$x = 1$$ y $$x = -1$$.</p>
+                </div>
+            </section>
+            <section class="practice">
+                <h3>Práctica</h3>
+                <p>El costo de producir $$x$$ unidades es $$C(x) = 100 + 5x + 0.01x^2$$. ¿Cuál es el costo marginal al producir 200 unidades?</p>
+                <button onclick="document.getElementById('resp-6').style.display='block'" class="btn-small">Ver Respuesta</button>
+                <p id="resp-6" class="hidden-answer"><strong>Solución:</strong> $$C'(x) = 5 + 0.02x$$. Al evaluar $$C'(200) = 5 + 4 = \$9$$ por unidad.</p>
+            </section>
+            <section class="downloads">
+                <h3>Material Descargable</h3>
+                <a href="recursos/pdfs/optimizacion.pdf" target="_blank" class="btn">📄 Problemas de Optimización</a>
+            </section>
+        </div>
 
     </main>
 
