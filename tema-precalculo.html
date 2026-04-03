@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo: PreCálculo</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* Estilos base (puedes reemplazarlos con tu hoja de estilos principal) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #004085;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .main-content {
+            flex: 3;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .sidebar {
+            flex: 1;
+            margin-left: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            align-self: flex-start;
+            position: sticky;
+            top: 20px;
+        }
+        h1, h2, h3 {
+            color: #004085;
+        }
+        section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+        }
+        .sidebar a:hover {
+            color: #004085;
+            text-decoration: underline;
+        }
+        .subsection {
+            margin-top: 15px;
+            padding-left: 15px;
+            border-left: 3px solid #cce5ff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Módulo: PreCálculo</h1>
+        <p>Fundamentos matemáticos para el Cálculo Diferencial e Integral</p>
+    </header>
+
+    <div class="container">
+        
+        <main class="main-content">
+            
+            <section id="sucesiones">
+                <h2>1. Sucesiones</h2>
+                <p>Introducción al estudio de patrones numéricos y el comportamiento en el infinito de secuencias discretas.</p>
+                
+                <div class="subsection">
+                    <h3>Teoría</h3>
+                    <p>Definición de sucesión, notación \( \{a_n\} \), progresiones aritméticas y geométricas, y concepto intuitivo de límite de una sucesión.</p>
+                </div>
+                <div class="subsection">
+                    <h3>Ejemplos Resueltos</h3>
+                    <p>Determinación del término general y cálculo de sumas parciales como \( S_n = \sum_{i=1}^{n} a_i \).</p>
+                </div>
+                <div class="subsection">
+                    <h3>Ejercicios Propuestos</h3>
+                    <p>Guía de trabajo práctico con ejercicios de progresiones e introducción a series.</p>
+                </div>
+            </section>
+
+            <section id="inecuaciones">
+                <h2>2. Inecuaciones</h2>
+                <p>Estudio de las desigualdades en los números reales y la representación de conjuntos solución.</p>
+                
+                <div class="subsection">
+                    <h3>Teoría</h3>
+                    <p>Propiedades de orden en \( \mathbb{R} \), inecuaciones lineales, cuadráticas, racionales y propiedades del valor absoluto \( |x| \).</p>
+                </div>
+                <div class="subsection">
+                    <h3>Ejemplos Resueltos</h3>
+                    <p>Resolución de desigualdades aplicando la tabla de signos (método de los puntos críticos) para inecuaciones del tipo \( \frac{P(x)}{Q(x)} \geq 0 \).</p>
+                </div>
+                <div class="subsection">
+                    <h3>Ejercicios Propuestos</h3>
+                    <p>Problemas de resolución algebraica de inecuaciones y sistemas de inecuaciones.</p>
+                </div>
+            </section>
+
+            <section id="funciones-reales">
+                <h2>3. Funciones Reales</h2>
+                <p>Análisis de las relaciones entre conjuntos numéricos y las propiedades gráficas y algebraicas de las funciones.</p>
+                
+                <div class="subsection">
+                    <h3>Teoría</h3>
+                    <p>Concepto de función \( f: A \to B \), dominio \( \text{Dom}(f) \), recorrido \( \text{Rec}(f) \), inyectividad, sobreyectividad, biyectividad, composición \( (f \circ g)(x) \) y función inversa.</p>
+                </div>
+                <div class="subsection">
+                    <h3>Ejemplos Resueltos</h3>
+                    <p>Cálculo de dominios con restricciones múltiples (raíces, logaritmos, denominadores) y demostraciones de inyectividad.</p>
+                </div>
+                <div class="subsection">
+                    <h3>Ejercicios Propuestos</h3>
+                    <p>Estudio completo de funciones elementales: polinómicas, exponenciales, logarítmicas y trigonométricas.</p>
+                </div>
+            </section>
+
+            <section id="aplicaciones">
+                <h2>4. Aplicaciones</h2>
+                <p>Modelado matemático utilizando las herramientas de funciones e inecuaciones para resolver problemas concretos.</p>
+                
+                <div class="subsection">
+                    <h3>Teoría</h3>
+                    <p>Estrategias para la traducción del lenguaje natural al lenguaje algebraico. Introducción a la optimización de recursos y maximización de áreas/volúmenes sin derivadas.</p>
+                </div>
+                <div class="subsection">
+                    <h3>Ejemplos Resueltos</h3>
+                    <p>Problemas clásicos de mezclas, trayectorias, crecimiento poblacional usando \( P(t) = P_0 e^{kt} \) y análisis de costos.</p>
+                </div>
+                <div class="subsection">
+                    <h3>Ejercicios Propuestos</h3>
+                    <p>Guía final de problemas de planteo para integrar todos los conocimientos del módulo.</p>
+                </div>
+            </section>
+
+        </main>
+
+        <aside class="sidebar">
+            <h3>Índice del Módulo</h3>
+            <ul>
+                <li><a href="#sucesiones">1. Sucesiones</a></li>
+                <li><a href="#inecuaciones">2. Inecuaciones</a></li>
+                <li><a href="#funciones-reales">3. Funciones Reales</a></li>
+                <li><a href="#aplicaciones">4. Aplicaciones</a></li>
+            </ul>
+        </aside>
+
+    </div>
+
+</body>
+</html>
