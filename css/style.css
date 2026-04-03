@@ -152,7 +152,7 @@ input, textarea {
 
 /* Estilos de la página de Tema */
 .lesson-container {
-    max-width: 800px;
+    max-width: 1200px; /* ¡Aquí ampliamos el ancho! */
     margin: 2rem auto;
     background: white;
     padding: 3rem;
