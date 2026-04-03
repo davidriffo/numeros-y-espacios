@@ -3,179 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Módulo: PreCálculo</title>
+    <title>Módulo de PreCálculo | MateRiffo</title>
+    <link rel="stylesheet" href="css/style.css">
+    
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
     <style>
-        /* Estilos base (puedes reemplazarlos con tu hoja de estilos principal) */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        header {
-            background-color: #004085;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
+        /* Estilos para el diseño de dos columnas (Contenido a la izq, Índice a la der) */
+        .module-layout {
             display: flex;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
+            gap: 2rem;
+            align-items: flex-start;
         }
-        .main-content {
-            flex: 3;
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+        .module-content {
+            flex: 3; /* Toma el 75% del ancho disponible */
         }
-        .sidebar {
-            flex: 1;
-            margin-left: 20px;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            align-self: flex-start;
+
+        .module-sidebar {
+            flex: 1; /* Toma el 25% del ancho disponible */
             position: sticky;
-            top: 20px;
+            top: 90px; /* Se queda fijo al hacer scroll, justo debajo de la barra de navegación */
+            background-color: #F5F7FA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
-        h1, h2, h3 {
-            color: #004085;
+
+        .module-sidebar ul {
+            list-style-type: none;
+            padding-top: 1rem;
         }
-        section {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #dee2e6;
+
+        .module-sidebar li {
+            margin-bottom: 0.8rem;
         }
-        section:last-child {
-            border-bottom: none;
-        }
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar li {
-            margin-bottom: 10px;
-        }
-        .sidebar a {
+
+        .module-sidebar a {
             text-decoration: none;
-            color: #0056b3;
-            font-weight: bold;
+            color: var(--primary-color);
+            font-weight: 500;
+            display: block;
+            transition: color 0.2s;
         }
-        .sidebar a:hover {
-            color: #004085;
-            text-decoration: underline;
+
+        .module-sidebar a:hover {
+            color: var(--secondary-color);
         }
-        .subsection {
-            margin-top: 15px;
-            padding-left: 15px;
-            border-left: 3px solid #cce5ff;
+
+        /* Sección de Historia/Motivación */
+        .history-section {
+            background-color: #eaf2f8;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            border: 1px solid #cce0f0;
+        }
+
+        /* Separador de subsecciones */
+        .sub-topic {
+            border-top: 3px dashed #ccc;
+            margin-top: 4rem;
+            padding-top: 2rem;
+        }
+
+        /* Responsividad: En celulares, el índice pasa arriba */
+        @media (max-width: 768px) {
+            .module-layout {
+                flex-direction: column-reverse;
+            }
+            .module-sidebar {
+                position: static;
+                width: 100%;
+                margin-bottom: 2rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Módulo: PreCálculo</h1>
-        <p>Fundamentos matemáticos para el Cálculo Diferencial e Integral</p>
+    <header class="navbar">
+        <div class="logo">MateRiffo</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Volver al Inicio</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="container">
+    <main class="lesson-container">
+        <h1>Módulo de PreCálculo</h1>
         
-        <main class="main-content">
+        <div class="module-layout">
             
-            <section id="sucesiones">
-                <h2>1. Sucesiones</h2>
-                <p>Introducción al estudio de patrones numéricos y el comportamiento en el infinito de secuencias discretas.</p>
+            <div class="module-content">
                 
-                <div class="subsection">
-                    <h3>Teoría</h3>
-                    <p>Definición de sucesión, notación \( \{a_n\} \), progresiones aritméticas y geométricas, y concepto intuitivo de límite de una sucesión.</p>
+                <div class="history-section">
+                    <h2>💡 Un poco de historia...</h2>
+                    <p>Antes de que Isaac Newton y Gottfried Leibniz formalizaran el Cálculo en el siglo XVII, los matemáticos ya lidiaban con problemas de áreas, tangentes y tasas de cambio. El <strong>PreCálculo</strong> reúne todas aquellas herramientas analíticas y algebraicas (como el estudio detallado de funciones y el concepto de límite en las sucesiones) que prepararon el terreno para uno de los mayores logros intelectuales de la humanidad.</p>
+                    <p>Dominar estas bases es fundamental: son el puente que conecta el álgebra elemental con el análisis matemático avanzado. ¡Comencemos el viaje!</p>
                 </div>
-                <div class="subsection">
-                    <h3>Ejemplos Resueltos</h3>
-                    <p>Determinación del término general y cálculo de sumas parciales como \( S_n = \sum_{i=1}^{n} a_i \).</p>
-                </div>
-                <div class="subsection">
-                    <h3>Ejercicios Propuestos</h3>
-                    <p>Guía de trabajo práctico con ejercicios de progresiones e introducción a series.</p>
-                </div>
-            </section>
 
-            <section id="inecuaciones">
-                <h2>2. Inecuaciones</h2>
-                <p>Estudio de las desigualdades en los números reales y la representación de conjuntos solución.</p>
-                
-                <div class="subsection">
-                    <h3>Teoría</h3>
-                    <p>Propiedades de orden en \( \mathbb{R} \), inecuaciones lineales, cuadráticas, racionales y propiedades del valor absoluto \( |x| \).</p>
+                <div id="sucesiones">
+                    <h2>1. Sucesiones</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>Una sucesión es una función cuyo dominio es el conjunto de los números naturales. Nos permite estudiar patrones numéricos y comprender cómo se comportan los valores a medida que avanzamos hacia el infinito. Las progresiones aritméticas y geométricas son los casos más fundamentales.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Encuentre la fórmula de la suma de los primeros \( n \) términos de una progresión geométrica cuya razón es \( r \neq 1 \).</p>
+                            <p><strong>Solución:</strong> Sea \( S_n = a + ar + ar^2 + \dots + ar^{n-1} \).</p>
+                            <p>Multiplicando por \( r \): \( rS_n = ar + ar^2 + \dots + ar^n \).</p>
+                            <p>Restando ambas expresiones: \( S_n - rS_n = a - ar^n \), lo que implica \( S_n(1 - r) = a(1 - r^n) \).</p>
+                            <p>Finalmente: $$ S_n = a \frac{1 - r^n}{1 - r} $$</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>Calcula la suma de los primeros 5 términos de la sucesión donde \( a_1 = 3 \) y la razón es \( r = 2 \).</p>
+                        <button onclick="document.getElementById('resp-pre-1').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-pre-1" class="hidden-answer"><strong>Solución:</strong> Aplicando la fórmula: \( S_5 = 3 \frac{1 - 2^5}{1 - 2} = 3 \frac{1 - 32}{-1} = 3(31) = 93 \).</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/guia_sucesiones.pdf" target="_blank" class="btn">📄 Guía de Sucesiones y Series</a>
+                    </section>
                 </div>
-                <div class="subsection">
-                    <h3>Ejemplos Resueltos</h3>
-                    <p>Resolución de desigualdades aplicando la tabla de signos (método de los puntos críticos) para inecuaciones del tipo \( \frac{P(x)}{Q(x)} \geq 0 \).</p>
-                </div>
-                <div class="subsection">
-                    <h3>Ejercicios Propuestos</h3>
-                    <p>Problemas de resolución algebraica de inecuaciones y sistemas de inecuaciones.</p>
-                </div>
-            </section>
 
-            <section id="funciones-reales">
-                <h2>3. Funciones Reales</h2>
-                <p>Análisis de las relaciones entre conjuntos numéricos y las propiedades gráficas y algebraicas de las funciones.</p>
-                
-                <div class="subsection">
-                    <h3>Teoría</h3>
-                    <p>Concepto de función \( f: A \to B \), dominio \( \text{Dom}(f) \), recorrido \( \text{Rec}(f) \), inyectividad, sobreyectividad, biyectividad, composición \( (f \circ g)(x) \) y función inversa.</p>
+                <div id="inecuaciones" class="sub-topic">
+                    <h2>2. Inecuaciones</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>A diferencia de las ecuaciones que buscan igualdades puntuales, las inecuaciones establecen relaciones de orden (mayor, menor). Su solución no suele ser un único número, sino un conjunto de valores representados como intervalos en la recta real.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Resuelva la inecuación racional $$ \frac{x - 3}{x + 2} \geq 0 $$</p>
+                            <p><strong>Solución:</strong> Buscamos los puntos críticos donde el numerador es cero (\(x = 3\)) y el denominador es cero (\(x = -2\), restricción).</p>
+                            <ul>
+                                <li>Para \( x < -2 \), ambos términos son negativos, la fracción es <strong>positiva</strong>.</li>
+                                <li>Para \( -2 < x < 3 \), el numerador es negativo y el denominador positivo, la fracción es <strong>negativa</strong>.</li>
+                                <li>Para \( x \geq 3 \), ambos son positivos, la fracción es <strong>positiva</strong>.</li>
+                            </ul>
+                            <p>El conjunto solución es: \( (-\infty, -2) \cup [3, \infty) \).</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>Resuelve la inecuación con valor absoluto: \( |x - 4| < 2 \).</p>
+                        <button onclick="document.getElementById('resp-pre-2').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-pre-2" class="hidden-answer"><strong>Solución:</strong> Por propiedad del valor absoluto, esto equivale a \( -2 < x - 4 < 2 \). Sumando 4 a toda la desigualdad obtenemos \( 2 < x < 6 \). El intervalo es \( (2, 6) \).</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/guia_inecuaciones.pdf" target="_blank" class="btn">📄 Ejercicios de Inecuaciones</a>
+                    </section>
                 </div>
-                <div class="subsection">
-                    <h3>Ejemplos Resueltos</h3>
-                    <p>Cálculo de dominios con restricciones múltiples (raíces, logaritmos, denominadores) y demostraciones de inyectividad.</p>
-                </div>
-                <div class="subsection">
-                    <h3>Ejercicios Propuestos</h3>
-                    <p>Estudio completo de funciones elementales: polinómicas, exponenciales, logarítmicas y trigonométricas.</p>
-                </div>
-            </section>
 
-            <section id="aplicaciones">
-                <h2>4. Aplicaciones</h2>
-                <p>Modelado matemático utilizando las herramientas de funciones e inecuaciones para resolver problemas concretos.</p>
-                
-                <div class="subsection">
-                    <h3>Teoría</h3>
-                    <p>Estrategias para la traducción del lenguaje natural al lenguaje algebraico. Introducción a la optimización de recursos y maximización de áreas/volúmenes sin derivadas.</p>
+                <div id="funciones" class="sub-topic">
+                    <h2>3. Funciones Reales</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>Una función es una regla de correspondencia que asigna a cada elemento de un conjunto (Dominio) exactamente un elemento de otro conjunto (Recorrido). Entender sus propiedades (inyectividad, paridad) y su álgebra es esencial para el cálculo diferencial.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Determine el dominio máximo de la función $$ f(x) = \sqrt{x^2 - 9} $$</p>
+                            <p><strong>Solución:</strong> Para que la raíz cuadrada esté definida en los reales, el argumento debe ser no negativo. Es decir, \( x^2 - 9 \geq 0 \).</p>
+                            <p>Factorizando: \( (x - 3)(x + 3) \geq 0 \).</p>
+                            <p>Aplicando el análisis de signos, el dominio es: \( \text{Dom}(f) = (-\infty, -3] \cup [3, \infty) \).</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>Dadas \( f(x) = 2x + 1 \) y \( g(x) = x^2 \), encuentre la composición \( (f \circ g)(x) \).</p>
+                        <button onclick="document.getElementById('resp-pre-3').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-pre-3" class="hidden-answer"><strong>Solución:</strong> \( (f \circ g)(x) = f(g(x)) = f(x^2) = 2(x^2) + 1 = 2x^2 + 1 \).</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/guia_funciones.pdf" target="_blank" class="btn">📄 Guía de Funciones y Dominio</a>
+                    </section>
                 </div>
-                <div class="subsection">
-                    <h3>Ejemplos Resueltos</h3>
-                    <p>Problemas clásicos de mezclas, trayectorias, crecimiento poblacional usando \( P(t) = P_0 e^{kt} \) y análisis de costos.</p>
+
+                <div id="aplicaciones" class="sub-topic">
+                    <h2>4. Aplicaciones</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>El poder de las matemáticas radica en su capacidad para modelar la realidad. Las funciones nos permiten describir el decaimiento radiactivo, la propagación de virus o la optimización de recursos económicos.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Un cultivo de bacterias crece según el modelo exponencial $$ P(t) = P_0 e^{kt} $$. Si inicialmente hay 100 bacterias y después de 2 horas hay 400, encuentre la constante de crecimiento \( k \).</p>
+                            <p><strong>Solución:</strong> Sabemos que \( P_0 = 100 \). Evaluamos en \( t = 2 \):</p>
+                            <p>\( 400 = 100 e^{2k} \implies 4 = e^{2k} \)</p>
+                            <p>Aplicando logaritmo natural: \( \ln(4) = 2k \implies k = \frac{\ln(4)}{2} \).</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>Un granjero tiene 100 metros de cerca para encerrar un área rectangular apoyada contra un río (no necesita cerca en ese lado). Exprese el área en función del ancho \( x \).</p>
+                        <button onclick="document.getElementById('resp-pre-4').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-pre-4" class="hidden-answer"><strong>Solución:</strong> Si el ancho es \( x \), usa dos lados de \( x \). El largo será \( 100 - 2x \). El área es \( A(x) = x(100 - 2x) = 100x - 2x^2 \).</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/guia_aplicaciones.pdf" target="_blank" class="btn">📄 Problemas de Planteo y Modelado</a>
+                    </section>
                 </div>
-                <div class="subsection">
-                    <h3>Ejercicios Propuestos</h3>
-                    <p>Guía final de problemas de planteo para integrar todos los conocimientos del módulo.</p>
-                </div>
-            </section>
 
-        </main>
+            </div> 
+            
+            <aside class="module-sidebar">
+                <h3>Contenidos del Módulo:</h3>
+                <ul>
+                    <li><a href="#sucesiones">1. Sucesiones</a></li>
+                    <li><a href="#inecuaciones">2. Inecuaciones</a></li>
+                    <li><a href="#funciones">3. Funciones Reales</a></li>
+                    <li><a href="#aplicaciones">4. Aplicaciones</a></li>
+                </ul>
+            </aside>
 
-        <aside class="sidebar">
-            <h3>Índice del Módulo</h3>
-            <ul>
-                <li><a href="#sucesiones">1. Sucesiones</a></li>
-                <li><a href="#inecuaciones">2. Inecuaciones</a></li>
-                <li><a href="#funciones-reales">3. Funciones Reales</a></li>
-                <li><a href="#aplicaciones">4. Aplicaciones</a></li>
-            </ul>
-        </aside>
+        </div> 
+    </main>
 
-    </div>
+    <footer>
+        <p>&copy; 2026 MateRiffo.</p>
+    </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
