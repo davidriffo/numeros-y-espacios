@@ -10,6 +10,11 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <style>
+        /* Estilos de la tabla de verdad */
+        .truth-table { width: 100%; border-collapse: collapse; margin: 20px 0; text-align: center; }
+        .truth-table th, .truth-table td { border: 1px solid #ccc; padding: 10px; }
+        .truth-table th { background-color: #eaf2f8; }
+
         /* Estilos para el diseño de dos columnas (Contenido a la izq, Índice a la der) */
         .module-layout {
             display: flex;
@@ -24,7 +29,7 @@
         .module-sidebar {
             flex: 1; /* Toma el 25% del ancho disponible */
             position: sticky;
-            top: 90px; /* Se queda fijo al hacer scroll, justo debajo de la barra de navegación */
+            top: 90px; /* Se queda fijo al hacer scroll */
             background-color: #F5F7FA;
             padding: 1.5rem;
             border-radius: 8px;
@@ -35,6 +40,14 @@
         .module-sidebar ul {
             list-style-type: none;
             padding-top: 1rem;
+            padding-left: 0;
+        }
+        
+        /* Estilos para sub-listas en el menú lateral */
+        .module-sidebar ul ul {
+            padding-top: 0.2rem;
+            padding-left: 1.2rem;
+            font-size: 0.9em;
         }
 
         .module-sidebar li {
@@ -62,11 +75,22 @@
             border: 1px solid #cce0f0;
         }
 
-        /* Separador de subsecciones */
+        /* Separador de subsecciones principales */
         .sub-topic {
             border-top: 3px dashed #ccc;
             margin-top: 4rem;
             padding-top: 2rem;
+        }
+
+        /* Subsecciones internas (para Lógica) */
+        .inner-topic {
+            margin-top: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .inner-topic h3 {
+            color: #0056b3;
+            border-bottom: 1px solid #eaf2f8;
+            padding-bottom: 5px;
         }
 
         /* Responsividad: En celulares, el índice pasa arriba */
@@ -106,38 +130,168 @@
                     <p>Hoy en día, el álgebra es el lenguaje universal que nos permite generalizar la aritmética y modelar desde la trayectoria de un satélite espacial hasta los algoritmos de inteligencia artificial. ¡Comencemos el viaje!</p>
                 </div>
 
-                <div id="logica">
-                    <h2>1. Lógica y Conjuntos</h2>
-                    <section class="theory">
-                        <h3>Teoría</h3>
-                        <p>La lógica matemática formaliza el razonamiento humano. Una proposición es un enunciado que puede ser verdadero (V) o falso (F), pero no ambos. Los conectivos lógicos (conjunción, disyunción, implicación) nos permiten construir proposiciones compuestas y evaluarlas mediante tablas de verdad.</p>
-                    </section>
-                    <section class="examples">
-                        <h3>Ejemplo Resuelto</h3>
-                        <div class="example-box">
-                            <p><strong>Problema:</strong> Construya la tabla de verdad para la implicación $$ p \implies q $$</p>
-                            <p><strong>Solución:</strong> La implicación solo es falsa cuando la premisa ($$p$$) es verdadera y la conclusión ($$q$$) es falsa. En cualquier otro caso, es verdadera.</p>
+                <div id="logica" class="sub-topic">
+                    <h2>1. Lógica</h2>
+                    
+                    <div id="proposiciones" class="inner-topic">
+                        <h3>1.1. Lenguaje Matemático y Proposiciones</h3>
+                        <section class="theory">
+                            <h4>Teoría</h4>
+                            <p>La matemática estudia propiedades de ciertos objetos tales como números, operaciones, conjuntos, relaciones, funciones, etc. Para ello es necesario contar con un lenguaje apropiado para expresar dichas propiedades de manera precisa.</p>
+                            <p>Comenzaremos desarrollando las principales leyes de la lógica, las cuales nos permitirán establecer la validez de ciertos argumentos, en particular revisaremos los conceptos de <strong>verdad, equivalencia lógica y consecuencia lógica.</strong></p>
+                            
+                            <h5>Definición de Proposición</h5>
+                            <p>Llamaremos <strong>proposiciones</strong> a aquellas frases del lenguaje natural sobre las cuales es posible afirmar si son verdaderas o falsas. Usaremos las letras \( p, q, r, s \dots \) para denotar proposiciones arbitrarias.</p>
+                        </section>
+                        
+                        <section class="examples">
+                            <h4>Ejemplos de oraciones del lenguaje usual:</h4>
                             <ul>
-                                <li>V $$\implies$$ V es <strong>V</strong></li>
-                                <li>V $$\implies$$ F es <strong>F</strong></li>
-                                <li>F $$\implies$$ V es <strong>V</strong></li>
-                                <li>F $$\implies$$ F es <strong>V</strong></li>
+                                <li><strong>"Esa casa es hermosa"</strong> (No es proposición, es subjetiva)</li>
+                                <li><strong>"Cinco es un número par"</strong> (Proposición, es falsa)</li>
+                                <li><strong>"Súmale 23"</strong> (No es proposición, es una orden)</li>
+                                <li><strong>"La temperatura en el patio es de 27 grados Celsius"</strong> (Proposición, puede ser verdadera o falsa)</li>
                             </ul>
-                        </div>
-                    </section>
-                    <section class="practice">
-                        <h3>Práctica</h3>
-                        <p>Determina el valor de verdad de: "Si 2+2=5, entonces el hielo es caliente".</p>
-                        <button onclick="document.getElementById('resp-alg-1').style.display='block'" class="btn-small">Ver Respuesta</button>
-                        <p id="resp-alg-1" class="hidden-answer"><strong>Solución:</strong> Es <strong>Verdadero</strong>. Como la premisa (2+2=5) es falsa, la implicación completa es lógicamente verdadera (vacuamente verdadera).</p>
-                    </section>
-                    <section class="downloads">
-                        <h3>Material Descargable</h3>
-                        <a href="recursos/pdfs/guia_logica.pdf" target="_blank" class="btn">📄 Guía de Lógica Proposicional</a>
-                    </section>
-                </div>
+                        </section>
+                    </div>
 
-                <div id="naturales" class="sub-topic">
+                    <div id="conectivos" class="inner-topic">
+                        <h3>1.2. Conectivos Lógicos</h3>
+                        <section class="theory">
+                            <h4>Teoría</h4>
+                            <p>Una proposición puede estar compuesta a su vez por una o más proposiciones más simples, las cuales se conectan por una palabra o frase a la que llamaremos <strong>conectivos</strong>.</p>
+                            
+                            <ul>
+                                <li><strong>Negación (\( \neg p \)):</strong> Si \( p \) es una proposición, \( \neg p \) denotará "No es verdad que \( p \)". Ejemplo: <em>"Dos no es par"</em>.</li>
+                                <li><strong>Conjunción (\( p \wedge q \)):</strong> Conecta dos proposiciones con la palabra <strong>"y"</strong>. Ejemplo: <em>"Dos es par y tres es impar"</em>.</li>
+                                <li><strong>Disyunción (\( p \vee q \)):</strong> Conecta dos proposiciones con la palabra <strong>"o"</strong>. Ejemplo: <em>"Dos es mayor que siete o siete es mayor que dos"</em>.</li>
+                                <li><strong>Implicación (\( p \longrightarrow q \)):</strong> Conecta mediante <strong>"Si... entonces..."</strong>. Ejemplo: <em>"Si dos es par entonces tres es impar"</em>.</li>
+                                <li><strong>Bicondicional (\( p \longleftrightarrow q \)):</strong> Conecta mediante <strong>"si y solo si"</strong>. Ejemplo: <em>"Dos es mayor que siete si y solo si siete es menor que dos"</em>.</li>
+                            </ul>
+                        </section>
+
+                        <section class="theory">
+                            <h4>Tablas de Verdad</h4>
+                            <p>En muchas ocasiones es más simple utilizar una tabla que permita resumir los valores de verdad de la proposición en cuestión.</p>
+                            <table class="truth-table">
+                                <tr>
+                                    <th>\( p \)</th>
+                                    <th>\( q \)</th>
+                                    <th>\( p \wedge q \)</th>
+                                    <th>\( p \vee q \)</th>
+                                    <th>\( p \longrightarrow q \)</th>
+                                    <th>\( p \longleftrightarrow q \)</th>
+                                </tr>
+                                <tr><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td></tr>
+                                <tr><td>V</td><td>F</td><td>F</td><td>V</td><td>F</td><td>F</td></tr>
+                                <tr><td>F</td><td>V</td><td>F</td><td>V</td><td>V</td><td>F</td></tr>
+                                <tr><td>F</td><td>F</td><td>F</td><td>F</td><td>V</td><td>V</td></tr>
+                            </table>
+                        </section>
+
+                        <section class="practice">
+                            <h4>Práctica: Traducción de Lenguaje Natural</h4>
+                            <p>Considere: \( p \): dos es par, \( q \): dos es impar, \( r \): tres es par, \( s \): tres es impar.</p>
+                            <p>Exprese usando simbología lógica las siguientes frases:</p>
+                            <ol>
+                                <li>O bien dos es par o bien dos es impar.</li>
+                                <li>Si dos no es par entonces tres es par y dos es impar.</li>
+                                <li>El que tres sea par equivale a que no sea impar.</li>
+                            </ol>
+                            <button onclick="document.getElementById('resp-logica-1').style.display='block'" class="btn-small">Ver Respuesta</button>
+                            <div id="resp-logica-1" class="hidden-answer">
+                                <strong>Solución:</strong>
+                                <ol>
+                                    <li>\( p \vee q \)</li>
+                                    <li>\( \neg p \longrightarrow (r \wedge q) \)</li>
+                                    <li>\( r \longleftrightarrow \neg s \)</li>
+                                </ol>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div id="leyes" class="inner-topic">
+                        <h3>1.3. Leyes de la Lógica (Álgebra Proposicional)</h3>
+                        <section class="theory">
+                            <h4>Propiedades Fundamentales</h4>
+                            <ul>
+                                <li><strong>Doble Negación:</strong> \( \neg (\neg p) \equiv p \)</li>
+                                <li><strong>Identidad y Dominación:</strong> \( p \wedge F \equiv F \), \( p \vee F \equiv p \)</li>
+                                <li><strong>Idempotencia:</strong> \( p \wedge p \equiv p \), \( p \vee p \equiv p \)</li>
+                                <li><strong>Conmutatividad:</strong> \( p \vee q \equiv q \vee p \), \( p \wedge q \equiv q \wedge p \)</li>
+                                <li><strong>Distributividad:</strong> \( p \vee (q \wedge r) \equiv (p \vee q) \wedge (p \vee r) \) y \( p \wedge (q \vee r) \equiv (p \wedge q) \vee (p \wedge r) \)</li>
+                                <li><strong>Implicación:</strong> \( p \longrightarrow q \equiv \neg p \vee q \)</li>
+                                <li><strong>Leyes de De Morgan:</strong> \( \neg(p \vee q) \equiv \neg p \wedge \neg q \) y \( \neg(p \wedge q) \equiv \neg p \vee \neg q \)</li>
+                                <li><strong>Absorción:</strong> \( p \vee (p \wedge q) \equiv p \) y \( p \wedge (p \vee q) \equiv p \)</li>
+                            </ul>
+                        </section>
+
+                        <section class="examples">
+                            <h4>Ejemplo Resuelto</h4>
+                            <div class="example-box">
+                                <p><strong>Problema:</strong> Simplifique la proposición \( [p \wedge (p \longrightarrow q)] \longrightarrow q \)</p>
+                                <p><strong>Solución:</strong></p>
+                                <ul>
+                                    <li>Aplicamos propiedad de la implicación: \( [p \wedge (\neg p \vee q)] \longrightarrow q \)</li>
+                                    <li>Distribuimos: \( [(p \wedge \neg p) \vee (p \wedge q)] \longrightarrow q \)</li>
+                                    <li>Sabemos que \( p \wedge \neg p \equiv F \), entonces: \( [F \vee (p \wedge q)] \longrightarrow q \)</li>
+                                    <li>Por identidad \( F \vee A \equiv A \): \( (p \wedge q) \longrightarrow q \)</li>
+                                    <li>Aplicamos propiedad de la implicación de nuevo: \( \neg(p \wedge q) \vee q \)</li>
+                                    <li>De Morgan: \( \neg p \vee \neg q \vee q \)</li>
+                                    <li>Como \( \neg q \vee q \equiv V \), entonces \( \neg p \vee V \equiv V \).</li>
+                                </ul>
+                                <p>La expresión es una Tautología (siempre verdadera).</p>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div id="ejercicios" class="inner-topic">
+                        <h3>1.4. Ejercicios Propuestos</h3>
+                        
+                        <section class="practice">
+                            <h4>Ejercicio 1</h4>
+                            <p>Se sabe que la proposición \( (p \wedge q) \longrightarrow \neg r \) es falsa. Determine el valor de verdad de:</p>
+                            <p>\( (\neg[p \wedge q] \vee \neg r) \longrightarrow ([(\neg p \vee \neg q)] \wedge \neg r \longrightarrow p) \)</p>
+                            <button onclick="document.getElementById('resp-logica-2').style.display='block'" class="btn-small">Ver Respuesta</button>
+                            <div id="resp-logica-2" class="hidden-answer">
+                                <p><strong>Solución:</strong> Para que la implicación principal sea falsa, el antecedente debe ser V y el consecuente F. Por lo tanto, \( (p \wedge q) \equiv V \) (lo que implica \( p \equiv V \) y \( q \equiv V \)) y \( \neg r \equiv F \) (lo que implica \( r \equiv V \)).</p>
+                                <p>Evaluando la expresión solicitada con \( p=V, q=V, r=V \), resulta en <strong>Verdadero (V)</strong>.</p>
+                            </div>
+                        </section>
+
+                        <section class="practice">
+                            <h4>Ejercicio 2</h4>
+                            <p>Determine si las siguientes proposiciones son tautologías, contradicciones o contingencias:</p>
+                            <ol>
+                                <li>\( (p \wedge q) \wedge \neg (p \wedge q) \)</li>
+                                <li>\( [(p \Longrightarrow q) \wedge (p \wedge \neg q \wedge r)] \Longrightarrow (\neg p \vee q) \)</li>
+                            </ol>
+                            <button onclick="document.getElementById('resp-logica-3').style.display='block'" class="btn-small">Ver Respuesta</button>
+                            <div id="resp-logica-3" class="hidden-answer">
+                                <p><strong>Solución:</strong></p>
+                                <ol>
+                                    <li>Es de la forma \( A \wedge \neg A \), por lo tanto es una <strong>Contradicción</strong>.</li>
+                                    <li>Notemos que \( (p \wedge \neg q) \) es exactamente la negación de \( (p \Longrightarrow q) \). Por lo tanto, el antecedente completo es falso (\( F \)). Como una implicación con antecedente falso siempre es verdadera, es una <strong>Tautología</strong>.</li>
+                                </ol>
+                            </div>
+                        </section>
+
+                        <section class="practice">
+                            <h4>Ejercicio 3</h4>
+                            <p>Si la siguiente proposición es falsa:</p>
+                            <p>\( (p \wedge \neg q) \Longrightarrow [r \vee (p \Longleftrightarrow q)] \)</p>
+                            <p>Determine el valor de verdad de las proposiciones \( p, q, r \).</p>
+                            <button onclick="document.getElementById('resp-logica-4').style.display='block'" class="btn-small">Ver Respuesta</button>
+                            <div id="resp-logica-4" class="hidden-answer">
+                                <p><strong>Solución:</strong> Para que la implicación sea falsa, el antecedente debe ser Verdadero y el consecuente Falso.</p>
+                                <ul>
+                                    <li>Antecedente V: \( (p \wedge \neg q) \equiv V \implies \mathbf{p \equiv V} \) y \( \mathbf{q \equiv F} \).</li>
+                                    <li>Consecuente F: Con los valores descubiertos, \( (p \Longleftrightarrow q) \equiv (V \Longleftrightarrow F) \equiv F \). Por lo tanto, nos queda \( [r \vee F] \equiv F \), lo que obliga a que \( \mathbf{r \equiv F} \).</li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </div> <div id="naturales" class="sub-topic">
                     <h2>2. Números Naturales e Inducción</h2>
                     <section class="theory">
                         <h3>Teoría</h3>
@@ -239,10 +393,20 @@
                     </section>
                 </div>
 
-            </div> <aside class="module-sidebar">
+            </div> 
+            
+            <aside class="module-sidebar">
                 <h3>Contenidos del Módulo:</h3>
                 <ul>
-                    <li><a href="#logica">1. Lógica y Conjuntos</a></li>
+                    <li>
+                        <a href="#logica">1. Lógica</a>
+                        <ul>
+                            <li><a href="#proposiciones">1.1. Lenguaje Matemático</a></li>
+                            <li><a href="#conectivos">1.2. Conectivos Lógicos</a></li>
+                            <li><a href="#leyes">1.3. Leyes de la Lógica</a></li>
+                            <li><a href="#ejercicios">1.4. Ejercicios Propuestos</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#naturales">2. Números Naturales</a></li>
                     <li><a href="#trigonometria">3. Trigonometría</a></li>
                     <li><a href="#vectores">4. Vectores</a></li>
@@ -250,7 +414,8 @@
                 </ul>
             </aside>
 
-        </div> </main>
+        </div> 
+    </main>
 
     <footer>
         <p>&copy; 2026 MateRiffo.</p>
