@@ -202,17 +202,49 @@
                     </div>
                     
 
-                    <div id="demostraciones" class="inner-topic">
-                        <h3>1.6. Técnicas de Demostración</h3>
-                        <section class="theory">
-                            <ul>
-                                <li><strong>Demostración Directa:</strong> A partir de \( p \) se obtiene \( q \).</li>
-                                <li><strong>Por Contrarecíproco:</strong> Demostrar \( \neg q \Longrightarrow \neg p \).</li>
-                                <li><strong>Reducción al Absurdo:</strong> Suponer \( p \wedge \neg q \) y llegar a una contradicción.</li>
-                                <li><strong>Por Casos:</strong> Dividir el conjunto de trabajo en subconjuntos.</li>
-                            </ul>
-                        </section>
-                    </div>
+                   <div id="demostraciones" class="inner-topic">
+              <h3>1.6. Técnicas de Demostración</h3>
+    
+                    <section class="theory">
+                    <ul>
+                  <li>
+                <strong>Demostración Directa:</strong> Consiste en considerar un resultado del tipo $p \Longrightarrow q$ y, a partir de la proposición $p$ y mediante deducciones y operaciones, obtener la proposición $q$.
+                <br><br>
+                <em>Ejemplo:</em> "Si $n$ es impar entonces su cuadrado también lo es". En este caso tendríamos $p(n): n \text{ es impar}$ y $q(n): n^2 \text{ es impar}$. Por lo tanto, una demostración directa de este resultado implicaría deducir el predicado $q(n)$ a partir del predicado $p(n)$.
+                </li>
+            
+                <li>
+                <strong>Por Contrarecíproco:</strong> Se basa en que las proposiciones $p \Longrightarrow q$ y $\neg q \Longrightarrow \neg p$ son lógicamente equivalentes. Por lo tanto, demostrar una de ellas equivale a demostrar la otra.
+                <br><br>
+                <em>Ejemplo:</em> Consideremos la afirmación "Si $a^2$ es un número par entonces $a$ también lo es". En este caso, el respectivo contrarrecíproco sería: "Si $a$ es un número impar entonces $a^2$ también lo es".
+                </li>
+            
+                <li>
+                <strong>Reducción al Absurdo:</strong> Al tratar de demostrar una afirmación del tipo $p \Longrightarrow q$, consideramos su negación $p \wedge \neg q$. Suponemos que esta negación es verdadera (es decir, que tanto $p$ como $\neg q$ lo son) y a partir de ello buscamos llegar a una contradicción.
+                <br><br>
+                <em>Ejemplo:</em> La afirmación "El número $\sqrt{2}$ es irracional". Para demostrarlo, suponemos que $\sqrt{2}$ se puede escribir como una fracción irreducible del tipo $\frac{a}{b}$ y a partir de ello se construye una contradicción.
+                </li>
+            
+                <li>
+                <strong>Por Casos:</strong> En este tipo de demostración, se intenta dividir el conjunto sobre el cual se trabaja en subconjuntos, sobre los cuales la afirmación a demostrar sea un poco más simple.
+                <br><br>
+                <em>Ejemplo:</em> "El cuadrado de un número natural no puede ser de la forma $4k+2$, ni $4k+3$". En esta demostración, conviene dividir el conjunto de los números naturales en cuatro subconjuntos, a saber, los números de la forma: $4k$, $4k+1$, $4k+2$ y $4k+3$.
+            </li>
+        </ul>
+    </section>
+
+    <br>
+    
+    <h4>Más Ejemplos y Ejercicios</h4>
+    <section class="examples">
+        <ul>
+            <li>Demuestre que un número de la forma $k+k^2$ con $k \in \mathbb{Z}$ siempre es par.</li>
+            <li>Demuestre que si $m,n$ son enteros tales que $$n+n^2+n^3=m+m^2$$ entonces $n$ es par.</li>
+            <li>Demuestre que para todo $a,b \in \mathbb{R}$ se tiene que $$|a|+|b|=|a+b|$$</li>
+            <li>Demuestre que para cada natural $n$, si $5n+3$ es par entonces $n$ es impar.</li>
+        </ul>
+    </section>
+</div>
                 </div> <div id="naturales" class="sub-topic">
                     <h2>2. Números Naturales</h2>
                     
@@ -290,7 +322,6 @@
 
                         <section class="downloads">
                         <h3>Material Descargable</h3>
-                        <a href="recursos/pdf/ejercicios-1-algebra.pdf" target="_blank" class="btn">📄 Ejercicios algebra proposicional</a>
                         <a href="recursos/pdf/ejercicios-2-algebra.pdf" target="_blank" class="btn">📄 Ejercicios sumatorias, inducción, demostraciones</a>
                     </section>  
                     </div>
