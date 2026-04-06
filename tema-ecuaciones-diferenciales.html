@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Ecuaciones Diferenciales | MateRiffo</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    
+    <style>
+        /* Estilos para el diseño de dos columnas (Contenido a la izq, Índice a la der) */
+        .module-layout {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .module-content {
+            flex: 3; /* Toma el 75% del ancho disponible */
+        }
+
+        .module-sidebar {
+            flex: 1; /* Toma el 25% del ancho disponible */
+            position: sticky;
+            top: 90px; /* Se queda fijo al hacer scroll */
+            background-color: #F5F7FA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .module-sidebar ul {
+            list-style-type: none;
+            padding-top: 1rem;
+            padding-left: 0;
+        }
+
+        .module-sidebar li {
+            margin-bottom: 0.8rem;
+        }
+
+        .module-sidebar a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            display: block;
+            transition: color 0.2s;
+        }
+
+        .module-sidebar a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Sección de Historia/Motivación */
+        .history-section {
+            background-color: #eaf2f8;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            border: 1px solid #cce0f0;
+        }
+
+        /* Separador de subsecciones */
+        .sub-topic {
+            border-top: 3px dashed #ccc;
+            margin-top: 4rem;
+            padding-top: 2rem;
+        }
+
+        .example-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #0056b3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .hidden-answer {
+            display: none;
+            background-color: #eafaf1;
+            padding: 10px;
+            border-left: 4px solid #2ecc71;
+            margin-top: 10px;
+        }
+
+        .btn-small {
+            background-color: #004085;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .btn-small:hover {
+            background-color: #002752;
+        }
+
+        /* Responsividad: En celulares, el índice pasa arriba */
+        @media (max-width: 768px) {
+            .module-layout {
+                flex-direction: column-reverse;
+            }
+            .module-sidebar {
+                position: static;
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">MateRiffo</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Volver al Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-container">
+        <h1>Módulo de Ecuaciones Diferenciales</h1>
+        
+        <div class="module-layout">
+            
+            <div class="module-content">
+                
+                <div class="history-section">
+                    <h2>💡 Un poco de historia...</h2>
+                    <p>Las leyes de la naturaleza no nos dicen directamente qué valor tiene una variable, sino cómo esta variable <strong>cambia</strong>. Desde la Segunda Ley de Newton, que relaciona la fuerza con la aceleración (la segunda derivada de la posición), hasta los modelos predictivos de propagación de enfermedades, casi todo fenómeno continuo puede modelarse mediante Ecuaciones Diferenciales.</p>
+                    <p>Resolverlas es el arte de "deshacer" la derivada para recuperar la función original que rige el comportamiento del sistema. ¡Comencemos a modelar el mundo!</p>
+                </div>
+
+                <div id="orden-uno" class="sub-topic">
+                    <h2>1. Ecuaciones de orden uno</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>Una ecuación diferencial de primer orden involucra solamente a la variable independiente, la función desconocida y su primera derivada: $F(x, y, y') = 0$. Estudiaremos los métodos analíticos principales para resolverlas: variables separables, ecuaciones lineales (usando el factor integrante), ecuaciones homogéneas y ecuaciones exactas.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Resuelva la ecuación diferencial de variables separables $$ \frac{dy}{dx} = 2xy $$</p>
+                            <p><strong>Solución:</strong> Separando las variables a cada lado de la igualdad: $$ \frac{dy}{y} = 2x \, dx $$</p>
+                            <p>Integrando ambos lados: $$ \int \frac{dy}{y} = \int 2x \, dx \implies \ln|y| = x^2 + C $$</p>
+                            <p>Aplicando la función exponencial: $$ |y| = e^{x^2 + C} = e^C e^{x^2} $$</p>
+                            <p>Llamando $K = \pm e^C$, la solución general es: $$ y(x) = K e^{x^2} $$</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>Resuelva el Problema de Valor Inicial (PVI): $y' + y = 0$ con $y(0) = 5$.</p>
+                        <button onclick="document.getElementById('resp-ed-1').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-ed-1" class="hidden-answer"><strong>Solución:</strong> Separando variables $dy/y = -dx$. Integrando: $\ln|y| = -x + C \implies y(x) = K e^{-x}$. Usando $y(0)=5$, obtenemos $K=5$. Solución: $y(x) = 5e^{-x}$.</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdf/capitulo-1-edo.pdf" target="_blank" class="btn">📄 Capitulo 1</a>
+                    </section>
+                </div>
+
+                <div id="cualitativo" class="sub-topic">
+                    <h2>2. Análisis cualitativo y aplicaciones</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>No todas las ecuaciones diferenciales pueden resolverse de manera analítica exacta. El análisis cualitativo utiliza herramientas como los <strong>campos de direcciones</strong> y las <strong>líneas de fase</strong> para entender el comportamiento de las soluciones (hacia dónde tienden, estabilidad de los puntos de equilibrio) sin necesidad de integrar.</p>
+                        <p>Aplicaremos esto a modelos de crecimiento poblacional (exponencial y logístico), Ley de Enfriamiento de Newton y problemas de mezclas.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Encuentre los puntos de equilibrio de la ecuación logística $P' = 0.05 P \left(1 - \frac{P}{1000}\right)$ y determine su estabilidad.</p>
+                            <p><strong>Solución:</strong> Los puntos de equilibrio ocurren cuando $P' = 0$. <br> $$ 0.05 P \left(1 - \frac{P}{1000}\right) = 0 \implies P = 0 \quad \text{o} \quad P = 1000 $$</p>
+                            <p>Analizando los signos de $P'$:</p>
+                            <ul>
+                                <li>Si $0 < P < 1000$, entonces $P' > 0$ (la población crece).</li>
+                                <li>Si $P > 1000$, entonces $P' < 0$ (la población decrece).</li>
+                            </ul>
+                            <p>Por lo tanto, $P=0$ es inestable y $P=1000$ (capacidad de carga) es asintóticamente estable.</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>Encuentre los puntos de equilibrio de la ecuación autónoma $y' = y^2 - 4$.</p>
+                        <button onclick="document.getElementById('resp-ed-2').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-ed-2" class="hidden-answer"><strong>Solución:</strong> Igualando la derivada a cero: $y^2 - 4 = 0 \implies (y-2)(y+2) = 0$. Los puntos de equilibrio son $y=2$ e $y=-2$.</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/guia_cualitativo.pdf" target="_blank" class="btn">📄 Problemas de Modelado y Fase</a>
+                    </section>
+                </div>
+
+                <div id="orden-dos" class="sub-topic">
+                    <h2>3. Ecuaciones de orden dos</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>Las EDO de segundo orden lineales tienen la forma $ay'' + by' + cy = g(x)$. Se dividen en homogéneas ($g(x)=0$) y no homogéneas. Para el caso homogéneo con coeficientes constantes, utilizaremos la ecuación característica. Para las no homogéneas, aplicaremos Coeficientes Indeterminados y Variación de Parámetros. Estos modelos son fundamentales en sistemas masa-resorte y circuitos eléctricos.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Resuelva la EDO homogénea $$ y'' - 5y' + 6y = 0 $$</p>
+                            <p><strong>Solución:</strong> Planteamos la ecuación característica sustituyendo $y=e^{rx}$: $$ r^2 - 5r + 6 = 0 $$</p>
+                            <p>Factorizando obtenemos: $(r-2)(r-3) = 0 \implies r_1 = 2, r_2 = 3$.</p>
+                            <p>Como las raíces son reales y distintas, la solución general es una combinación lineal: $$ y(x) = C_1 e^{2x} + C_2 e^{3x} $$</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>Encuentre la ecuación característica y la forma de la solución para un oscilador armónico simple: $y'' + \omega^2 y = 0$.</p>
+                        <button onclick="document.getElementById('resp-ed-3').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-ed-3" class="hidden-answer"><strong>Solución:</strong> Ec. Característica: $r^2 + \omega^2 = 0 \implies r = \pm i\omega$ (raíces complejas imaginarias puras). La solución es $y(x) = C_1 \cos(\omega x) + C_2 \sin(\omega x)$.</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdf/capitulo-2-edo.pdf" target="_blank" class="btn">📄 Capitulo 2</a>
+                        <a href="recursos/pdf/ejercicios-1-edo.pdf" target="_blank" class="btn">📄 Primera coleccion de problemas</a>
+                    </section>
+                </div>
+
+                <div id="laplace" class="sub-topic">
+                    <h2>4. Transformada de Laplace</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>La Transformada de Laplace es un operador integral que transforma una EDO en una ecuación algebraica en el dominio de la frecuencia ($s$). Es extremadamente útil para resolver problemas con funciones discontinuas, como fuerzas impulsivas o funciones escalón (Heaviside).</p>
+                        <p>La definición matemática es: $\mathcal{L}\{f(t)\} = \int_0^\infty e^{-st}f(t) dt$.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Calcule la Transformada de Laplace de $f(t) = e^{at}$.</p>
+                            <p><strong>Solución:</strong> Aplicando la definición: $$ \mathcal{L}\{e^{at}\} = \int_0^\infty e^{-st} e^{at} dt = \int_0^\infty e^{-(s-a)t} dt $$</p>
+                            <p>Evaluando la integral impropia (asumiendo $s > a$ para convergencia): $$ \left[ \frac{-1}{s-a} e^{-(s-a)t} \right]_0^\infty = 0 - \left( \frac{-1}{s-a} (1) \right) = \frac{1}{s-a} $$</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>Utilizando las tablas de transformadas, ¿cuál es la Transformada Inversa $\mathcal{L}^{-1} \left\{ \frac{s}{s^2 + 9} \right\}$?</p>
+                        <button onclick="document.getElementById('resp-ed-4').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-ed-4" class="hidden-answer"><strong>Solución:</strong> Corresponde a la forma $\frac{s}{s^2 + \omega^2}$ con $\omega^2 = 9 \implies \omega=3$. La respuesta es $f(t) = \cos(3t)$.</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/tabla_laplace.pdf" target="_blank" class="btn">📄 Tabla y Propiedades de Laplace</a>
+                    </section>
+                </div>
+
+                <div id="series" class="sub-topic">
+                    <h2>5. Soluciones por series de potencias</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>Para EDOs con coeficientes variables, a menudo no existen soluciones expresables en funciones elementales. El método de series de potencias supone que la solución se puede escribir como una sumatoria infinita: $y(x) = \sum_{n=0}^\infty c_n(x-x_0)^n$. Al sustituir en la EDO, encontramos una relación de recurrencia para los coeficientes $c_n$.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Encuentre la relación de recurrencia para $y'' - x y = 0$ (Ecuación de Airy) alrededor del punto ordinario $x_0 = 0$.</p>
+                            <p><strong>Solución:</strong> Asumimos $y = \sum_{n=0}^\infty c_n x^n$. Derivando:</p>
+                            <p>$y' = \sum_{n=1}^\infty n c_n x^{n-1}$ e $y'' = \sum_{n=2}^\infty n(n-1) c_n x^{n-2}$</p>
+                            <p>Sustituyendo en la EDO y ajustando los índices de las sumatorias para unificar potencias de $x$, se llega a la relación: $$ c_{k+2} = \frac{c_{k-1}}{(k+2)(k+1)} \quad \text{para } k \geq 1 $$ (con $c_2 = 0$).</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>¿Qué forma tiene la solución asumida mediante el Teorema de Frobenius alrededor de un punto singular regular $x_0 = 0$?</p>
+                        <button onclick="document.getElementById('resp-ed-5').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-ed-5" class="hidden-answer"><strong>Solución:</strong> Se asume una serie multiplicada por una potencia fraccionaria o negativa: $y(x) = x^r \sum_{n=0}^\infty c_n x^n = \sum_{n=0}^\infty c_n x^{n+r}$, donde $c_0 \neq 0$ y $r$ es la raíz de la ecuación indicial.</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/guia_series_potencias.pdf" target="_blank" class="btn">📄 Guía de Soluciones por Series</a>
+                    </section>
+                </div>
+
+                <div id="sistemas" class="sub-topic">
+                    <h2>6. Sistemas de ecuaciones diferenciales</h2>
+                    <section class="theory">
+                        <h3>Teoría</h3>
+                        <p>Muchas situaciones reales requieren más de una variable dependiente, generando sistemas de la forma $\mathbf{X}' = A\mathbf{X}$. Utilizaremos el álgebra lineal, específicamente el cálculo de valores propios (eigenvalues) y vectores propios (eigenvectors) de la matriz $A$, para desacoplar el sistema y encontrar la solución general.</p>
+                    </section>
+                    <section class="examples">
+                        <h3>Ejemplo Resuelto</h3>
+                        <div class="example-box">
+                            <p><strong>Problema:</strong> Transforme la EDO lineal de segundo orden $y'' + 3y' + 2y = 0$ en un sistema de EDOs de primer orden.</p>
+                            <p><strong>Solución:</strong> Definimos nuevas variables:</p>
+                            <p>$x_1 = y$</p>
+                            <p>$x_2 = y'$</p>
+                            <p>Derivando ambas obtenemos el sistema:</p>
+                            <ul>
+                                <li>$x_1' = x_2$</li>
+                                <li>$x_2' = y'' = -2y - 3y' = -2x_1 - 3x_2$</li>
+                            </ul>
+                            <p>En forma matricial: $$ \begin{pmatrix} x_1' \\ x_2' \end{pmatrix} = \begin{pmatrix} 0 & 1 \\ -2 & -3 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} $$</p>
+                        </div>
+                    </section>
+                    <section class="practice">
+                        <h3>Práctica</h3>
+                        <p>Si la matriz de un sistema $2 \times 2$ tiene valores propios $\lambda_1 = -1$ y $\lambda_2 = -3$, ¿cómo se clasifica el punto de equilibrio en el origen del plano de fase?</p>
+                        <button onclick="document.getElementById('resp-ed-6').style.display='block'" class="btn-small">Ver Respuesta</button>
+                        <p id="resp-ed-6" class="hidden-answer"><strong>Solución:</strong> Como ambos valores propios son reales, distintos y estrictamente negativos, el origen es un <strong>Nodo Estable</strong> (o pozo), lo que significa que todas las trayectorias convergen al origen a medida que $t \to \infty$.</p>
+                    </section>
+                    <section class="downloads">
+                        <h3>Material Descargable</h3>
+                        <a href="recursos/pdfs/guia_sistemas.pdf" target="_blank" class="btn">📄 Guía de Sistemas de EDO y Planos de Fase</a>
+                    </section>
+                </div>
+
+            </div> 
+            
+            <aside class="module-sidebar">
+                <h3>Contenidos del Módulo:</h3>
+                <ul>
+                    <li><a href="#orden-uno">1. Ecuaciones de orden uno</a></li>
+                    <li><a href="#cualitativo">2. Análisis cualitativo</a></li>
+                    <li><a href="#orden-dos">3. Ecuaciones de orden dos</a></li>
+                    <li><a href="#laplace">4. Transformada de Laplace</a></li>
+                    <li><a href="#series">5. Soluciones por series</a></li>
+                    <li><a href="#sistemas">6. Sistemas de ecuaciones</a></li>
+                </ul>
+            </aside>
+
+        </div> 
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MateRiffo.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
